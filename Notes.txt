@@ -1,0 +1,4 @@
+### SGE
+
+qhost
+Eqw: qstat -j jobid | grep error
