@@ -1,0 +1,12 @@
+--chemistry	(optional) Assay configuration. 
+NOTE: by default the assay configuration is detected automatically, which is the recommended mode. 
+You should only specify chemistry if there is an error in automatic detection. Select one of:
+
+auto for auto-detection (default),
+threeprime for Single Cell 3′,
+fiveprime for Single Cell 5′,
+SC3Pv1 for Single Cell 3′ v1,
+SC3Pv2 for Single Cell 3′ v2,
+SC3Pv3 for Single Cell 3′ v3,
+SC5P-PE for Single Cell 5′ paired-end (both R1 and R2 are used for alignment),
+SC5P-R2 for Single Cell 5′ R2-only (where only R2 is used for alignment).
