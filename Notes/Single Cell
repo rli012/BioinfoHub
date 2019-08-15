@@ -1,0 +1,11 @@
+### Annotation
+celaref
+SingleR
+
+### Batch effect
+CCA (canonical correlation analysis)
+MNN (mutual nearest neighbors)
+Harmony
+
+### Courses
+https://broadinstitute.github.io/2019_scWorkshop/
