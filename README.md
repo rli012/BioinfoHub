@@ -28,4 +28,5 @@ B cells, CD14+ cells, CD4+ CD45RO+ CD45RA- T cells, CD4+ T cells, CD8+ T cells, 
 
 ## [BioGPS](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49910)
 
-
+## [CellO Datasets](http://deweylab.biostat.wisc.edu/cell_type_classification/)
+Curated dataset comprising nearly all human public, primary bulk samples in the NCBI’s Sequence Read Archive
