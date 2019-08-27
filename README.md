@@ -22,8 +22,8 @@ The Genotype-Tissue Expression (GTEx) project is an ongoing effort to build a co
 ## [RefDIC: Reference Database of Immune Cells](http://refdic.rcai.riken.jp/welcome.cgi)
 
 ## [IRIS: Immune response in silico](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22886)
-We isolated twelve different types of human leukocytes from peripheral blood and bone marrow, treated them to induce activation and/or differentiation, and profiled their gene expression before and after treatment.
-The twelve cell types are:
+We isolated twelve different types of human leukocytes from peripheral blood and bone marrow, treated them to induce activation and/or differentiation, and profiled their gene expression before and after treatment.\n
+The twelve cell types are:\n
 B cells, CD14+ cells, CD4+ CD45RO+ CD45RA- T cells, CD4+ T cells, CD8+ T cells, IgG/IgA memory B cells, IgM memory B cells, Monocytes, NK cells, Neutrophils, Plasma cells from bone marrow, and Plasma cells from PBMC.
 
 ## [BioGPS](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49910)
