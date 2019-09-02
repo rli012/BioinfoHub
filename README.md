@@ -10,6 +10,12 @@ The Genotype-Tissue Expression (GTEx) project is an ongoing effort to build a co
 
 ## [TCGA: The Cancer Genome Atlas](https://portal.gdc.cancer.gov/)
 
+## [CLLE: Cancer Cell Line Encyclopedia](https://portals.broadinstitute.org/ccle/about)
+
+## [CrownBio](https://www.crownbio.com/)
+
+## [The Cancer Proteome Atlas](https://www.tcpaportal.org/tcpa/index.html)
+
 
 ## [DICE: Database of Immune Cell eQTL, Expression & Epigenomics](https://dice-database.org/)
 
@@ -32,8 +38,7 @@ B cells, CD14+ cells, CD4+ CD45RO+ CD45RA- T cells, CD4+ T cells, CD8+ T cells, 
 Novel curated dataset comprising nearly all human public, primary bulk samples in the NCBI’s Sequence Read Archive
 
 
-## [CrownBio](https://www.crownbio.com/)
+
 
 ## [Harmonizome](http://amp.pharm.mssm.edu/Harmonizome/)
 
-## [The Cancer Proteome Atlas](https://www.tcpaportal.org/tcpa/index.html)
