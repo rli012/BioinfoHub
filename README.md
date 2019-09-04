@@ -19,9 +19,14 @@ The Genotype-Tissue Expression (GTEx) project is an ongoing effort to build a co
 
 ## [DICE: Database of Immune Cell eQTL, Expression & Epigenomics](https://dice-database.org/)
 
+TPM
+
 ## [Blueprint](http://www.blueprint-epigenome.eu/)
 
 ## [FANTOM5: Funcional Annotation of The Mammalian Genome](http://fantom.gsc.riken.jp/5/)
+
+Gene expression data (Count and TPM): http://fantom.gsc.riken.jp/5/datafiles/latest/extra/gene_level_expression/
+
 
 ## [ImmuneCo: ](https://immuco.bjmu.edu.cn/)
 
