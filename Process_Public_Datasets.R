@@ -156,3 +156,31 @@ eSet <- ExpressionSet(assayData = as.matrix(exprData),
                       phenoData = AnnotatedDataFrame(phenoData))
 
 saveRDS(eSet, file='rData/BLUEPRINT_TPM_SYMBOL_eSet.rds')
+
+                  
+##################
+## Primary Cell
+idx <- which(phenoData$BIOMATERIAL_TYPE == 'Primary Cell')
+idx
+
+exprData <- exprData[,idx]
+
+phenoData <- phenoData[idx,]
+phenoData$DISEASE[phenoData$DISEASE=='Acute Lymphocytic Leukemia'] <- 'ALL'
+phenoData$DISEASE[phenoData$DISEASE=='Acute Myeloid Leukemia'] <- 'AML'
+phenoData$DISEASE[phenoData$DISEASE=='Acute Promyelocytic Leukemia'] <- 'APL'
+
+phenoData$PlotGroup <- ifelse(phenoData$DISEASE=='None', paste0(phenoData$CELL_TYPE, ' (', phenoData$TISSUE_TYPE, ')'),
+                              paste0(phenoData$CELL_TYPE, ' (', phenoData$TISSUE_TYPE, ', ', phenoData$DISEASE, ')'))
+
+phenoData$PlotGroup <- capitalizeRL(phenoData$PlotGroup)
+
+eSet <- ExpressionSet(assayData = as.matrix(exprData),
+                      phenoData = AnnotatedDataFrame(phenoData))
+
+                               
+####
+capitalizeRL <- function(x) {
+  substr(x,1,1) <- toupper(substr(x,1,1))
+  return(x)
+}
