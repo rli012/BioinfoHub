@@ -67,10 +67,12 @@ phenoData
 eSet <- ExpressionSet(assayData = as.matrix(exprData),
                       phenoData = AnnotatedDataFrame(phenoData))
 
-saveRDS(eSet, file='rData/eSet_DICE_TPM.rds')
+saveRDS(eSet, file='rData/DICE_TPM_eSet.rds')
 
-
-
+dice <- list()
+dice[['Exprs']] <- exprData
+dice[['Symbol']] <- rownames(exprData)
+dice[['Group']] <- phenoData
 
 ############################################################################
 
@@ -177,8 +179,13 @@ phenoData$PlotGroup <- capitalizeRL(phenoData$PlotGroup)
 
 eSet <- ExpressionSet(assayData = as.matrix(exprData),
                       phenoData = AnnotatedDataFrame(phenoData))
+                  
+blueprint <- list()
+blueprint[['Exprs']] <- exprData
+blueprint[['Symbol']] <- rownames(exprData)
+blueprint[['Group']] <- phenoData
 
-                               
+          
 ####
 capitalizeRL <- function(x) {
   substr(x,1,1) <- toupper(substr(x,1,1))
