@@ -43,6 +43,10 @@ B cells, CD14+ cells, CD4+ CD45RO+ CD45RA- T cells, CD4+ T cells, CD8+ T cells, 
 Novel curated dataset comprising nearly all human public, primary bulk samples in the NCBI’s Sequence Read Archive
 
 
+## [The Human Protein Atlas](https://www.proteinatlas.org/)
+
+## [Roadmap Epigenomics](http://www.roadmapepigenomics.org/)
+
 
 
 ## [Harmonizome](http://amp.pharm.mssm.edu/Harmonizome/)
