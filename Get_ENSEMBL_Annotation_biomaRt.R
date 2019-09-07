@@ -13,8 +13,7 @@ View(attributes)
 
 #affyids=c("202763_at","209310_s_at","207500_at")
 annotation <- getBM(attributes=c('ensembl_gene_id', 'entrezgene_id', #'hgnc_symbol', 
-                                 'external_gene_name', 'description', 
-                                 'gene_biotype'),
+                                 'external_gene_name', 'description', 'gene_biotype'),
                     #filters = 'affy_hg_u133_plus_2', 
                     #values = affyids, 
                     mart = ensembl)
