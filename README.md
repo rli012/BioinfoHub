@@ -1,6 +1,14 @@
 # Courses/Tutorials
 Garrett Grolemund and Hadley Wickham: [R for Data Science](https://r4ds.had.co.nz/)
 
+# Community
+
+## [Biostars](https://www.biostars.org/)
+## [Stack Overflow](https://stackoverflow.com/)
+## [AIPuFu](http://www.aipufu.com/)
+## [生信技能树](http://www.biotrainee.com/)
+## [生信人](https://shengxin.ren/)
+
 
 # Databases
 
