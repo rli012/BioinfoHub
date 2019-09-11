@@ -1,5 +1,5 @@
 
-library(preprocessCore) # quantile normalization
+library(preprocessCore) # normalize.quantiles()
 library(vsn)
 
 eSet <- readRDS(file='data/rData/eSet.rds')
