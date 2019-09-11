@@ -2,7 +2,7 @@
 library(preprocessCore) # quantile normalization
 library(vsn)
 
-eSet <- readRDS(file='data/rData/Sengenics_Immunome_RawMean_eSet.rds')
+eSet <- readRDS(file='data/rData/eSet.rds')
 phenoData <- pData(eSet)
 exprData <- exprs(eSet)
 
