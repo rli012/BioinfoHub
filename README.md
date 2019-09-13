@@ -5,7 +5,6 @@ Garrett Grolemund and Hadley Wickham: [R for Data Science](https://r4ds.had.co.n
 
 ## [Biostars](https://www.biostars.org/)
 ## [Stack Overflow](https://stackoverflow.com/)
-## [AIPuFu](http://www.aipufu.com/)
 ## [生信技能树](http://www.biotrainee.com/)
 ## [生信人](https://shengxin.ren/)
 
@@ -58,4 +57,9 @@ Novel curated dataset comprising nearly all human public, primary bulk samples i
 
 
 ## [Harmonizome](http://amp.pharm.mssm.edu/Harmonizome/)
+
+
+
+## [AAgAtlas: A human autoantigen database](http://biokb.ncpsb.org/aagatlas/index.php)
+## [Open Targets](https://www.opentargets.org/)
 
