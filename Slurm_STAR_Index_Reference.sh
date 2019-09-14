@@ -15,7 +15,7 @@
 STAR=/rhome/rli012/bigdata/SingleCell/STAR-2.6.0a/bin/Linux_x86_64/STAR
 samtools=/opt/linux/centos/7.x/x86_64/pkgs/samtools/0.1.19/bin/samtools
 
-# annotation
+
 annotation=/rhome/rli012/bigdata/SingleCell/Gencode22/anno/gencode.v22.annotation.gtf # gtf annotation file
 genomeFa=/rhome/rli012/bigdata/SingleCell/Gencode22/ref/GRCh38.p2.genome.fa.noPatches # fasta sequence file
 genomeDir=/rhome/rli012/bigdata/SingleCell/Gencode22/ref/ #output directory
