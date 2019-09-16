@@ -11,8 +11,6 @@ library(ComplexHeatmap)
 library(clusterProfiler)
 library(org.Hs.eg.db)
 
-
-
 ################################ HELP FUNCTIONS
 
 organizeEnrichFun <- function(go) {
@@ -114,9 +112,6 @@ contrast.matrix <- makeContrasts(Hyperplasia='Hyperplasia - Normal',
                                  Moderate='Moderate_dysplasia - Normal',
                                  Severe='Severe_dysplasia - Normal',
                                  levels=design)
-
-
-
 
 ### Differential gene expression analysis (limma)
 
