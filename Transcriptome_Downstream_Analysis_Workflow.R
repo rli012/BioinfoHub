@@ -11,6 +11,9 @@ library(ComplexHeatmap)
 library(clusterProfiler)
 library(org.Hs.eg.db)
 
+
+setwd('~/Projects/Infrastructure_20190109/BioinfoHub/')
+
 ################################ HELP FUNCTIONS
 
 organizeEnrichFun <- function(go) {
@@ -63,7 +66,7 @@ convertRatioFun <- function(v, type='bg') {
 ########## Data preprocessing and Differential gene expression
 
 ### Import the ExpressionSet
-eSet <- readRDS('toy_eSet.rds')
+eSet <- readRDS('data/TCGA_RNAseq_toy_eSet.rds')
 
 #eSet <- readRDS('data/GSE79209_Raw_eSet.rds')
 
@@ -107,12 +110,6 @@ contrast.matrix <- makeContrasts(contrasts='PrimaryTumor - SolidTissueNormal',
                                  levels=design)
 contrast.matrix
 
-contrast.matrix <- makeContrasts(Hyperplasia='Hyperplasia - Normal',
-                                 Mild='Mild_dysplasia - Normal',
-                                 Moderate='Moderate_dysplasia - Normal',
-                                 Severe='Severe_dysplasia - Normal',
-                                 levels=design)
-
 ### Differential gene expression analysis (limma)
 
 fit <- lmFit(v, design)
@@ -128,8 +125,9 @@ View(dgeTable)
 
 ### Map Ensembl ID to gene symbol
 idx <- match(rownames(dgeTable), rownames(annoData))
-dgeTable$Symbol <- annoData$gene_name[idx]
-dgeTable$Biotype <- annoData$gene_type[idx]
+dgeTable$Symbol <- annoData$Symbol[idx]
+dgeTable$Biotype <- annoData$Biotype[idx]
+
 
 ###############################################################################
 
@@ -276,10 +274,10 @@ draw(ht)
 genes <- rownames(dataForVolcanoPlot)[dataForVolcanoPlot$Significance != 'NS']
 genes
 
-
 dataForEnrichment <- annoData[genes,]
 dataForEnrichment
 
+# SLOW !!!
 go <- list()
 for (category in c('BP','CC','MF')) {
   go[[category]] <- enrichGO(gene = rownames(dataForEnrichment),
@@ -291,20 +289,17 @@ for (category in c('BP','CC','MF')) {
                              pvalueCutoff = 0.01,
                              readable = FALSE)
 
-  go[[category]] <- simplify(go[[category]], cutoff=0.7, by="p.adjust", select_fun=min)
+  #go[[category]] <- simplify(go[[category]], cutoff=0.7, by="p.adjust", select_fun=min)
   go[[category]] <- organizeEnrichFun(data.frame(go[[category]]@result))
   go[[category]]$Category <- category
 
 }
-
 
 goForPlot <- do.call(rbind, go)
 goForPlot$Terms
 
 goForPlot <- goForPlot[goForPlot$pValue<0.05,]
 dim(goForPlot)
-View(goForPlot)
-
 
 ggplot(data=goForPlot, mapping=aes(x=Terms, y=-log(pValue,10), fill=Category)) +
   geom_bar(stat='identity') + scale_x_discrete(limits=goForPlot$Terms) +
@@ -363,6 +358,5 @@ ggplot(data=keggForPlot, mapping=aes(x=Terms, y=-log(pvalue,10))) +
                    panel.grid.minor = element_blank(),
                    panel.border = element_rect(colour='white'),
                    panel.background = element_blank())
-
 
 
