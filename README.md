@@ -8,6 +8,10 @@ Garrett Grolemund and Hadley Wickham: [R for Data Science](https://r4ds.had.co.n
 ## [生信技能树](http://www.biotrainee.com/)
 ## [生信人](https://shengxin.ren/)
 
+# Infrastructure
+
+## [UC Riverside HPCC](https://hpcc.ucr.edu/)
+## [遗传与发育生物学研究所 基因组分析平台](http://sjzx.genetics.ac.cn/jyzfxpt/ArticleShow.asp?ArticleID=172)
 
 # Databases
 
