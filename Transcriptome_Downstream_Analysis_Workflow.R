@@ -223,9 +223,6 @@ ggplot(data=dataForBoxPlot, aes(x=group, y=expr)) +
         axis.title = element_text(size=16))
 
 
-
-
-
 ########### Heatmap
 
 ann_colors <- list(
@@ -358,5 +355,3 @@ ggplot(data=keggForPlot, mapping=aes(x=Terms, y=-log(pvalue,10))) +
                    panel.grid.minor = element_blank(),
                    panel.border = element_rect(colour='white'),
                    panel.background = element_blank())
-
-
