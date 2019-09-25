@@ -22,6 +22,50 @@ ggplot(dataForDensityPlot, aes(x=expr, fill=array)) +
         axis.title=element_text(size=16),
         strip.text = element_text(size=14))
 
+### Volcano plot
+ggplot(dataForVolcanoPlot, aes(x = logFC, y = -log10(P.Value))) +
+  #xlim(-7.5,7.5)
+  labs(x=expression('log'[2]*'(Fold Change)'), 
+       y=(expression('-log'[10]*'(FDR)')), 
+       title=NULL) +
+  geom_point(color='#90909090', fill='#d0d0d090', alpha=1, size=1, shape=21) +
+  geom_point(data=subset(dataForVolcanoPlot, Gene %in% genes),
+                         color='navy', fill='#0000FFa0', alpha=1, size=2, shape=21) +
+  geom_vline(xintercept = c(-logFcThreshold, logFcThreshold),
+             color='darkgreen', linetype='dashed') +
+  geom_hline(yintercept = -log10(adjPvalThreshold), 
+             color='darkgreen',linetype='dashed') +
+  #scale_x_continuous(breaks=c(-4,-2,0,2,4,6,8,10)) +
+  #scale_y_continuous(expand = c(0.3, 0)) +
+  #scale_color_manual(values = c('#4285F4',"gray", '#FBBC05')) +
+  #scale_color_manual(values = c('green3',"black", "red")) +
+  #facet_wrap(~Comparison, ncol = 2) +
+  geom_text_repel(data=subset(dataForVolcanoPlot, Gene %in% genes),
+                  segment.alpha = 0.4, aes(label = Gene), 
+                  size = 3.5, color='red', segment.color = 'black') +
+  #geom_text_repel(data = subset(dataForVolcanoPlot, 
+  #                              adj.P.Val < adjPvalThreshold & logFC > log2(2)), 
+  #                segment.alpha = 0.4, aes(label = Symbol), 
+  #                size = 3.5, color='red', segment.color = 'black') +
+  #geom_text_repel(data = subset(dataForVolcanoPlot, 
+  #                              adj.P.Val < adjPvalThreshold & logFC < log2(2)*-1), 
+  #                segment.alpha = 0.4, aes(label = Symbol), 
+  #                size = 3.5, color='green3', segment.color = 'black') +
+  theme_bw() +
+  theme(axis.line = element_line(colour = "black"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_rect(colour='black'),
+        panel.background = element_blank()) +
+  theme(axis.text=element_text(size=14),
+        axis.title=element_text(size=16),
+        plot.title = element_text(size = 14, face = 'bold', hjust = 0.5),
+        legend.position = 'none',
+        #legend.text = element_text(size = 14),
+        #legend.title = element_text(size = 14, face = 'bold'),
+        strip.text = element_text(size = 14, face = 'bold'))
+
+
 ### World map
 library(maps)
 
