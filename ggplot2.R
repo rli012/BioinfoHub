@@ -106,3 +106,45 @@ ggplot(world.map, aes(long, lat)) +
         legend.position = c(0.05,0.3)) +
   theme(strip.text = element_text(size = 14),
         legend.key.size = unit(0.8,'cm'))
+
+### Boxplot, geom_jitter, set colors
+color <- ifelse(sapply(1:10, function(i) exprData[genes[i],] > mControl[i]), 'royalblue', 'lightblue')
+color <- ifelse(sapply(1:10, function(i) exprData[genes[i],] > mControl[i]), 'darkblue', 'lightblue')
+
+dataForBoxPlot <- data.frame(expr=as.numeric(t(exprData[genes,])), 
+                             colors=c(color),
+                             group=phenoData$Status,
+                             gene=rep(genes, each=ncol(exprData)),
+                             threshold=rep(mControl, each=ncol(exprData)),
+                             stringsAsFactors = F)
+
+dataForBoxPlot$gene <- factor(dataForBoxPlot$gene, levels=genes)
+dataForBoxPlot$gene
+
+threshold <- data.frame(gene=genes, thres=mControl, stringsAsFactors = F)
+threshold$gene <- factor(threshold$gene, levels=genes)
+
+ggplot(data=dataForBoxPlot, aes(x=group, y=expr)) +
+  geom_boxplot(aes(fill=NULL),
+               outlier.shape = NA, outlier.size = NA,#outlier.colour = 'black',
+               outlier.fill = NA) +
+  geom_hline(data=threshold, aes(yintercept = thres), color='blue',linetype='dashed', size=0.5)+
+  #ylim(6,9)+
+  #geom_boxplot(aes(color=group, fill=group),
+  #             outlier.shape = 21, outlier.size = 1,#outlier.colour = 'black',
+  #             outlier.fill = NA, alpha=1, width=0.5) +
+  #stat_summary(geom = "crossbar", width=0.45, fatten=0, color="white", position=p,
+  #             fun.data = function(x){ return(c(y=median(x), ymin=median(x), ymax=median(x))) }) +
+  facet_wrap(~gene, nrow=2) +
+  geom_jitter(size=1.2, width=0.2, aes(colour=colors)) + 
+  #scale_color_manual(values = dataForBoxPlot$colors) + # Jitter color palette
+  labs(x=NULL, y=expression('Log'[2]*'Intensity')) +
+  #geom_segment(data=df,aes(x = x1, y = y1, xend = x2, yend = y2)) +
+  #geom_text(data =anno, aes(x, y, label=label, group=NULL),
+  #          size=5) +
+  theme(legend.position = 'none')+
+  theme(axis.text = element_text(size=14,color='black'),
+        axis.text.x = element_text(angle = 0, hjust = 0.5),
+        axis.title = element_text(size=16),
+        strip.text = element_text(size=14, face='bold')) +
+  theme(plot.margin =  margin(t = 0.25, r = 0.25, b = 0.25, l = 0.25, unit = "cm"))
