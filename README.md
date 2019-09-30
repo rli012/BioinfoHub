@@ -69,3 +69,8 @@ Novel curated dataset comprising nearly all human public, primary bulk samples i
 ## [PreMedKB](http://www.fudan-pgx.org/premedkb/index.html#/home)
 ## [OncoKB](https://oncokb.org/)
 
+
+# Online Tools
+
+## [DICE Tools](https://tools.dice-database.org/)
+## [xCell](http://xcell.ucsf.edu/)
