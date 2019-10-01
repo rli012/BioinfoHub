@@ -74,3 +74,4 @@ Novel curated dataset comprising nearly all human public, primary bulk samples i
 
 ## [DICE Tools](https://tools.dice-database.org/)
 ## [xCell](http://xcell.ucsf.edu/)
+## [CIBERSORT](https://cibersort.stanford.edu/)
