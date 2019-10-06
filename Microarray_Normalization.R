@@ -17,4 +17,12 @@ meanSdPlot(exprDataVsnNorm)
 
 ### Lowess/Loess
 
+### loessCyc
+
+exprDataLoessCycNorm <- normalizeCyclicLoess(log2(exprData))
+exprDataLoessCycNorm
+
+
 ### Median Normalization
+
+### rlm
