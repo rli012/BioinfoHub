@@ -200,3 +200,15 @@ ht <- Heatmap(as.matrix(sig.exprs), name='Log2(UMI)', show_row_names = TRUE, sho
         col = colorRamp2(c(0, floor(max(sig.exprs))), c("grey95", "red")))
 ht
 
+                       
+### Pie
+ggplot(dataForPiePlot, aes(x = "", y = Prop, fill = Tissue)) +
+  geom_bar(width = 1, stat = "identity", color = "white", size=0.1) +
+  coord_polar("y", start = 0) + 
+  #geom_text(aes(y = lab.ypos, label = Prop), color = "white") +
+  #geom_text(aes(label = paste0(Prop, "%")), position = position_stack(vjust = 0.5)) +
+  #scale_fill_manual(values = mycols) +
+  theme_void() + 
+  theme(legend.position = 'bottom',
+        legend.title = element_blank(),
+plot.margin = margin(t=0.1,l=0.1,r=0.1,b=0.1, unit = 'cm'))
