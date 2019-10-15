@@ -50,7 +50,7 @@ $STAR --runThreadN $CPU \
       --limitBAMsortRAM 19732153018 \
 	  --outFileNamePrefix alignment/${PREFIX}
 
-$samtools sort -@ $CPU alignment/${PREFIX}Aligned.out.bam alignment/${PREFIX}
+$samtools sort -@ $CPU alignment/${PREFIX}Aligned.out.bam -T alignment/${PREFIX} -o alignment/${PREFIX}.bam
 rm alignment/${PREFIX}Aligned.out.bam
 
 
