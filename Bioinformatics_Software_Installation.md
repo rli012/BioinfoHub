@@ -46,3 +46,5 @@ export PYTHONPATH=`pwd`/env/lib/python2.7/site-packages
 pip install multiqc  
 	
 **scp -r FastQC/ rli012@cluster.hpcc.ucr.edu:~/bigdata/G/**  
+
+### IGV: https://software.broadinstitute.org/software/igv/download
