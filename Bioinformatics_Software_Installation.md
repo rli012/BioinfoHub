@@ -1,5 +1,5 @@
 ### STAR: https://github.com/alexdobin/STAR
-wget https://github.com/alexdobin/STAR/archive/2.7.3a.tar.gz	
+wget https://github.com/alexdobin/STAR/archive/2.7.3a.tar.gz  
 tar -xzf 2.7.3a.tar.gz  
 cd STAR-2.7.3a  
 cd source  
