@@ -78,10 +78,10 @@ df <- data.frame(long=c(119.4101,-122.2711),
                  level=c(1,-1))
 
 ggplot(world.map, aes(long, lat)) +
-  geom_map(map=world, aes(map_id=region), fill='lightyellow', color="gray80", alpha=0.5, size=0.1) +
+  geom_map(map=world.map, aes(map_id=region), fill='lightyellow', color="gray80", alpha=0.5, size=0.1) +
   #coord_quickmap() +
   #labs(x='',y='') +
-  #ylim(0,50) +
+  #xlim(-10,28) + ylim(36,63) +
   geom_point(data=df, aes(long, lat, color=level), size=2) +
   scale_colour_gradientn(limits=c(-1.5,1.5),
                          colors= c("blue",'white',"red")) + 
