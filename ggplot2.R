@@ -212,3 +212,11 @@ ggplot(dataForPiePlot, aes(x = "", y = Prop, fill = Tissue)) +
   theme(legend.position = 'bottom',
         legend.title = element_blank(),
 plot.margin = margin(t=0.1,l=0.1,r=0.1,b=0.1, unit = 'cm'))
+                       
+                       
+### ComplexHeatmap
+# have a symmetric continuous legend (say, from -3 to 3) with white in the center (at 0)
+# https://github.com/jokergoo/ComplexHeatmap/issues/82
+library(circlize)
+col_fun = colorRamp2(c(-3, 0, 3), c("blue", "white", "red"))
+                       
