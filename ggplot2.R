@@ -219,4 +219,8 @@ plot.margin = margin(t=0.1,l=0.1,r=0.1,b=0.1, unit = 'cm'))
 # https://github.com/jokergoo/ComplexHeatmap/issues/82
 library(circlize)
 col_fun = colorRamp2(c(-3, 0, 3), c("blue", "white", "red"))
-                       
+
+# margin
+# https://github.com/jokergoo/ComplexHeatmap/issues/174
+column_names_max_height = unit(10, 'cm')
+draw(ht, padding = unit(c(2, 2, 2, 20), "mm")) #bottom, left, top, right paddings
