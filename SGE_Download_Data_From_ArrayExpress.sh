@@ -31,3 +31,4 @@ done
 
 echo 'Done!'
 
+# wget <file.ext> -P /path/to/folder
