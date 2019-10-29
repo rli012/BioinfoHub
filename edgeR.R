@@ -24,6 +24,9 @@ dge <- estimateDisp(dge, design)
 fit <- glmQLFit(dge, design)
 qlf <- glmQLFTest(fit, contrast=contrast.matrix)
 
+#fit <- glmFit(dge, design)
+#lrt <- glmLRT(fit, contrast=contrast.matrix)
+
 dgeTable <- topTags(qlf, n = Inf, sort.by = 'p', adjust.method = 'BH')
 dgeTable <- dgeTable[[1]]
 dgeTable$Symbol <- rownames(dgeTable)
