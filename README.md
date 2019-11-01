@@ -69,6 +69,8 @@ Novel curated dataset comprising nearly all human public, primary bulk samples i
 ## [PreMedKB](http://www.fudan-pgx.org/premedkb/index.html#/home)
 ## [OncoKB](https://oncokb.org/)
 
+## [UpToData](https://www.uptodate.com/)
+
 
 # Online Tools
 
