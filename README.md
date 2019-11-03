@@ -62,7 +62,7 @@ Novel curated dataset comprising nearly all human public, primary bulk samples i
 
 ## [Harmonizome](http://amp.pharm.mssm.edu/Harmonizome/)
 
-## [HCMDB](https://hcmdb.i-sanger.com/)
+## [HCMDB: Human Cancer Metastasis Database](https://hcmdb.i-sanger.com/)
 
 ## [AAgAtlas: A human autoantigen database](http://biokb.ncpsb.org/aagatlas/index.php)
 ## [Open Targets](https://www.opentargets.org/)
