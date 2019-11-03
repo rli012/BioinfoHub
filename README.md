@@ -68,6 +68,7 @@ Novel curated dataset comprising nearly all human public, primary bulk samples i
 ## [Open Targets](https://www.opentargets.org/)
 ## [PreMedKB](http://www.fudan-pgx.org/premedkb/index.html#/home)
 ## [OncoKB](https://oncokb.org/)
+## [GDSC: Genomics of Drug Sensitivity in Cancer](https://www.sanger.ac.uk/science/tools/gdsc-genomics-drug-sensitivity-cancer)
 
 
 
