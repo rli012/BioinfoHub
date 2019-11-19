@@ -1,5 +1,5 @@
 # Courses/Tutorials
-Garrett Grolemund and Hadley Wickham: [R for Data Science](https://r4ds.had.co.nz/)
+Garrett Grolemund and Hadley Wickham: [R for Data Science](https://r4ds.had.co.nz/)  
 [Illumina DRAGEN Bio-IT Platform](https://www.illumina.com/products/by-type/informatics-products/dragen-bio-it-platform.html)
 
 # Community
