@@ -28,6 +28,8 @@ install.packages("http://mbni.org/customcdf/24.0.0/gencodeg.download/pd.huex10st
 library(pd.huex10st.hs.ensg)
 library(pd.huex10st.hs.gencodeg)
 
+filePaths = getGEOSuppFiles(gse, baseDir = 'data/fromGEO', makeDirectory = FALSE,filter_regex = 'RAW')
+untar(paste0('data/fromGEO/', gse, '_RAW.tar'), exdir = paste0('data/fromGEO/', gse, '_RAW'))
 
 celFiles = list.celfiles(paste0('data/fromGEO/', gse, '_RAW'), full.names=T, listGzipped=T)
 celFiles
