@@ -1,4 +1,4 @@
-#FILES=`cat SRR_Acc_List.txt`
+FILES=`cat SRR_Acc_List.txt`
 
 for FILE in $FILES
 do
