@@ -5,6 +5,7 @@ library(oligo)
 gse <- 'GSE46691'
 
 seriesMatrix <- getGEO(gse, AnnotGPL = FALSE, GSEMatrix = TRUE, destdir = 'data/fromGEO/') # AnnotGPL = TRUE
+#seriesMatrix <- getGEO(filename="~/Downloads/GSE60341_series_matrix.txt.gz")
 
 phenoData <- pData(seriesMatrix[[1]])
 phenoData
