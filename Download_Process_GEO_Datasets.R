@@ -10,6 +10,14 @@ seriesMatrix <- getGEO(gse, AnnotGPL = FALSE, GSEMatrix = TRUE, destdir = 'data/
 phenoData <- pData(seriesMatrix[[1]])
 phenoData
 
+phenoData <- phenoData[,c(1,2,8,36:38)]
+colnames(phenoData)
+
+colnames(phenoData) <- gsub(':ch1', '', colnames(phenoData))
+colnames(phenoData) <- gsub(' ', '_', colnames(phenoData))
+
+colnames(phenoData)[3] <- 'tissue'
+
 seriesMatrix[[1]]@featureData@data
 
 View(phenoData)
