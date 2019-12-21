@@ -224,3 +224,39 @@ col_fun = colorRamp2(c(-3, 0, 3), c("blue", "white", "red"))
 # https://github.com/jokergoo/ComplexHeatmap/issues/174
 column_names_max_height = unit(10, 'cm')
 draw(ht, padding = unit(c(2, 2, 2, 20), "mm")) #bottom, left, top, right paddings
+                       
+                       
+                       
+### scatter
+p1 <- ggplot(dataForScatterPlot, aes(x=x, y=y)) + geom_point(aes(color=Reg), size=1.5) + ggtitle('') +
+  #geom_point(data = subset(dataForScatterPlot, Reg == 'UP'),
+  #           aes(x, y, color=Reg), size=0.5) +
+  #geom_point(data = subset(dataForScatterPlot, Reg == 'DOWN'),
+  #           aes(x, y, color=Reg), size=0.5) +
+  scale_color_manual(values = c('blue',"gray", "red")) +
+  geom_abline(intercept = 1, slope=1, color='black', linetype='dashed') +
+  geom_abline(intercept = -1, slope=1, color='black', linetype='dashed') +
+  labs(x='x',y='y') +
+  
+  #geom_text_repel(data=subset(avg.t.cells, avg.t.cells$gene %in% genes.to.label1.top), 
+  #                aes(label=gene), segment.alpha = 0.4,size = 3, color='red',
+  #                nudge_y = 1) +
+  #geom_text_repel(data=subset(avg.t.cells, avg.t.cells$gene %in% genes.to.label2.top), 
+  #                aes(label=gene), segment.alpha = 0.4,size = 3, color='darkgreen',
+  #                nudge_x = 1) +
+  theme(legend.position = 'none') +
+  theme_bw()+
+  theme(legend.title = element_blank(),
+        legend.text = element_text(size=14),
+        legend.position = 'none') +
+  theme(axis.title=element_text(size=16),
+        axis.text = element_text(color='black', size=14)) +
+  theme(plot.title = element_text(hjust = 0.5, size=16, face='bold')) +
+  theme(axis.line = element_line(colour = "black"),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        panel.grid = element_blank(),
+        panel.grid.major = element_blank()) #+
+#theme(plot.margin =  margin(t = 0.25, r = 0.25, b = 0.25, l = 1, unit = "cm"))
+
+p1
