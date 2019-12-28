@@ -6,6 +6,7 @@
 #SBATCH --output=MultiQC.stdout
 #SBATCH -p batch
 
+source /rhome/rli012/bigdata/G/env/bin/activate
 export PYTHONPATH=/rhome/rli012/bigdata/G/env/lib/python2.7/site-packages
 
 multiqc fastpQC/
