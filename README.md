@@ -22,6 +22,8 @@ The Genotype-Tissue Expression (GTEx) project is an ongoing effort to build a co
 
 ## [TCGA: The Cancer Genome Atlas](https://portal.gdc.cancer.gov/)
 
+## [ICGC Data Portal](https://dcc.icgc.org/)
+
 ## [CLLE: Cancer Cell Line Encyclopedia](https://portals.broadinstitute.org/ccle/about)
 
 ## [CrownBio](https://www.crownbio.com/)
@@ -72,7 +74,7 @@ Novel curated dataset comprising nearly all human public, primary bulk samples i
 ## [GDSC: Genomics of Drug Sensitivity in Cancer](https://www.sanger.ac.uk/science/tools/gdsc-genomics-drug-sensitivity-cancer)
 ## [GSEA | MSigDB - Broad Institute](http://software.broadinstitute.org/gsea/msigdb/index.jsp)  
 ## [ImmPort](https://www.immport.org/home)
-## [zenodo](https://zenodo.org/)
+## [Zenodo](https://zenodo.org/)
 
 ## [UpToDate](https://www.uptodate.com/)
 
