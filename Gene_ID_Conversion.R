@@ -1,10 +1,16 @@
-# Entrez, Ensembl, HGNC
 
 library(rtracklayer)
 library(tibble)
 library(biomaRt)
 library(stringr)
+library(devtools)
+#install_github("js229/Vennerable")
+library(Vennerable)
 
+
+#############################################################################################
+# ==================================== Data Collection ==================================== #
+#############################################################################################
 
 ####### GENCODE V32
 getGENCODEAnnotation <- function(species='human', release='32', type='gene', gtf.file=NULL) {
@@ -70,30 +76,17 @@ saveRDS(ensembl, file='data/Annotation/ENSEMBL_Annotation_Human_V98_20191230.RDS
 
 
 
-
 ###
 ensembl <- readRDS(file='data/Annotation/ENSEMBL_Annotation_Human_V98_20191230.RDS')
-gencode <- readRDS(file='data/Annotation/GENCODE_Annotation_Human_V32_20191230.RDS')
-View(gencode[duplicated(gencode$ensembl),])
 
 ensembl[ensembl==''] <- NA
 
 keep <- which(ensembl$chromosome_name %in% c(1:22, 'MT', 'X', 'Y'))
 ensembl <- ensembl[keep,]
 
-sum(duplicated(ensembl$entrezgene_id[!is.na(ensembl$entrezgene_id)]))
-sum(duplicated(ensembl$hgnc_id[!is.na(ensembl$hgnc_id)]))
-
-ensembl$ensembl_gene_id[duplicated(ensembl$entrezgene_id)]
-
-ensembl$hgnc_id[!is.na(ensembl$hgnc_id)][duplicated(ensembl$hgnc_id[!is.na(ensembl$hgnc_id)])]
-
-
-genes <- ensembl$ensembl_gene_id[duplicated(ensembl$ensembl_gene_id)]
-
-View(ensembl[ensembl$ensembl_gene_id %in% genes,])
-
-View(ncbi.gene.info)
+#filter <- which(duplicated(ensembl$ensembl_gene_id))
+#ensembl <- ensembl[-filter,]
+#dim(ensembl)
 
 
 ####### HGNC
@@ -103,7 +96,6 @@ View(ncbi.gene.info)
 
 hgnc <- read.table(file='data/Annotation/hgnc_complete_set_20191230.txt', sep='\t', quote='', 
                    comment.char='', header = T, stringsAsFactors = F)
-View(hgnc)
 
 hgnc.withdrawn <- read.table(file='data/Annotation/hgnc_withdrawn_20191230.txt', sep='\t', quote='', 
                              comment.char='', header = T, stringsAsFactors = F)
@@ -117,7 +109,7 @@ hgnc.withdrawn$CURRENT_SYMBOL <- unlist(lapply(hgnc.withdrawn$MERGED_INTO_REPORT
                                            function(x) strsplit(x,'|', fixed=T)[[1]][2]))
 
 
-### NCBI
+####### NCBI
 ncbi.gene.info <- read.table('data/Annotation/NCBI_Homo_sapiens.gene_info.20191230.gz', header = T, stringsAsFactors = F, 
                              sep='\t', quote='', comment.char = '')
 
@@ -126,8 +118,6 @@ ncbi.gene.info[ncbi.gene.info=='-'] <- NA
 ncbi.gene.info$ensembl_gene_id <- str_extract(ncbi.gene.info$dbXrefs, 'ENSG\\d+')
 ncbi.gene.info$hgnc_id <- str_extract(ncbi.gene.info$dbXrefs, 'HGNC:\\d+')
 
-
-###
 ncbi.gene.history <- read.table(file='data/Annotation/NCBI_Homo_sapiens.gene_history.20191230.txt', sep='\t', header=T,
                                 stringsAsFactors = F, quote = '', comment.char = '')
 
@@ -135,11 +125,15 @@ ncbi.gene.history[ncbi.gene.history=='-'] <- NA
 ncbi.gene.history$GeneID <- as.numeric(ncbi.gene.history$GeneID)
 ncbi.gene.history$Discontinued_GeneID <- as.numeric(ncbi.gene.history$Discontinued_GeneID)
 
-###################################################
 
-### Update Ensembl
 
-#ensembl[which(ensembl$hgnc_id %in% hgnc.withdrawn$HGNC_ID),]
+
+
+#############################################################################################
+# ====================================== Update IDs ======================================= #
+#############################################################################################
+
+####### ENSEMBL
 
 idx <- which(!ensembl$hgnc_id %in% c(hgnc$hgnc_id,NA))
 idx
@@ -156,17 +150,13 @@ ensembl[idx,]$description <- NA
 idx <- which(ensembl$entrezgene_id %in% ncbi.gene.history$Discontinued_GeneID)
 ensembl[idx,]$entrezgene_id
 
-newid <- ncbi.gene.history$GeneID[match(ensembl[idx,]$entrezgene_id, ncbi.gene.history$Discontinued_GeneID)]
-newid
+newids <- ncbi.gene.history$GeneID[match(ensembl[idx,]$entrezgene_id, ncbi.gene.history$Discontinued_GeneID)]
+newids
 
-ensembl[idx,]$entrezgene_id <- newid
-
-
+ensembl[idx,]$entrezgene_id <- newids
 
 
-#####
-
-# Update HGNC
+####### HGNC
 
 idx <- which(!hgnc$ensembl_gene_id %in% c(ensembl$ensembl_gene_id,NA))
 idx
@@ -175,21 +165,17 @@ View(hgnc[idx,])
 
 hgnc$ensembl_gene_id[idx] <- NA
 
-
-###
-
 which(hgnc$entrez_id[!is.na(hgnc$entrez_id)] %in% ncbi.gene.history$Discontinued_GeneID)
 idx <- which(!hgnc$entrez_id %in% c(ncbi.gene.info$GeneID,NA))
 idx
 
-newid <- ncbi.gene.history$GeneID[match(hgnc[idx,]$entrez_id, ncbi.gene.history$Discontinued_GeneID)]
-newid
+newids <- ncbi.gene.history$GeneID[match(hgnc[idx,]$entrez_id, ncbi.gene.history$Discontinued_GeneID)]
+newids
 
-hgnc[idx,]$entrez_id <- newid
+hgnc[idx,]$entrez_id <- newids
 
-#####
 
-# Update NCBI Entrez
+####### NCBI
 
 idx <- which(!ncbi.gene.info$ensembl_gene_id %in% c(ensembl$ensembl_gene_id,NA))
 idx
@@ -197,8 +183,7 @@ idx
 dim(ncbi.gene.info)
 sum(ncbi.gene.info$ensembl_gene_id %in% c(ensembl$ensembl_gene_id,NA))
 
-#ncbi.gene.info$ensembl_gene_id[idx] <- NA
-
+ncbi.gene.info$ensembl_gene_id[idx] <- NA
 
 #ensembl[which(ensembl$hgnc_id %in% hgnc.withdrawn$HGNC_ID),]
 
@@ -209,7 +194,6 @@ sum(ncbi.gene.info$ensembl_gene_id %in% c(ensembl$ensembl_gene_id,NA))
 #gene2 <- ncbi.gene.info$Symbol[match(ovlp, ncbi.gene.info$GeneID)]
 
 #data.frame(gene1, gene2)[which(gene1!=gene2),]
-
 
 idx <- which(!ncbi.gene.info$hgnc_id %in% c(hgnc$hgnc_id,NA))
 idx
@@ -223,11 +207,6 @@ ncbi.gene.info[idx,]$description <- NA
 
 
 ##################
-
-library(devtools)
-install_github("js229/Vennerable")
-library(Vennerable)
-
 
 set1 <- ensembl$ensembl_gene_id[which(!is.na(ensembl$hgnc_id))]
 set2 <- hgnc$ensembl_gene_id[which(!is.na(hgnc$ensembl_gene_id))]
@@ -244,9 +223,12 @@ vennData <- Venn(set.list)
 vennData
 
 
-##############################################################
 
-#### Ensembl
+#############################################################################################
+# ======================================= Map IDs ========================================= #
+#############################################################################################
+
+####### ENSEMBL
 
 idx<- which(is.na(ensembl$hgnc_id))
 ensembl$hgnc_id[idx] <- hgnc$hgnc_id[match(ensembl$ensembl_gene_id[idx], hgnc$ensembl_gene_id)]
@@ -255,7 +237,7 @@ idx<- which(is.na(ensembl$entrezgene_id))
 ensembl$entrezgene_id[idx] <- ncbi.gene.info$GeneID[match(ensembl$ensembl_gene_id[idx], ncbi.gene.info$ensembl_gene_id)]
 
 
-### HGNC
+####### HGNC
 
 idx<- which(is.na(hgnc$ensembl_gene_id))
 hgnc$ensembl_gene_id[idx] <- ensembl$ensembl_gene_id[match(hgnc$hgnc_id[idx], ensembl$hgnc_id)]
@@ -264,8 +246,7 @@ idx<- which(is.na(hgnc$entrez_id))
 hgnc$entrez_id[idx] <-ncbi.gene.info$GeneID[match(hgnc$hgnc_id[idx], ncbi.gene.info$hgnc_id)]
 
 
-
-### NCBI
+####### NCBI
 
 idx<- which(is.na(ncbi.gene.info$ensembl_gene_id))
 ncbi.gene.info$ensembl_gene_id[idx] <- ensembl$ensembl_gene_id[match(ncbi.gene.info$GeneID[idx], ensembl$entrezgene_id)]
@@ -274,14 +255,133 @@ idx<- which(is.na(ncbi.gene.info$hgnc_id))
 ncbi.gene.info$hgnc_id[idx] <- hgnc$hgnc_id[match(ncbi.gene.info$GeneID[idx], hgnc$entrez_id)]
 
 
+sum(!is.na(ensembl$hgnc_id)) # 38616
+sum(!is.na(ensembl$entrezgene_id)) # 26479
 
-View(ncbi.gene.info)
+sum(!is.na(hgnc$ensembl_gene_id)) # 38420
+sum(!is.na(hgnc$entrez_id)) # 41674
 
-sum(!is.na(ensembl$hgnc_id))
-sum(!is.na(ensembl$entrezgene_id))
+sum(!is.na(ncbi.gene.info$ensembl_gene_id)) # 26411
+sum(!is.na(ncbi.gene.info$hgnc_id)) # 41674
 
-sum(!is.na(hgnc$ensembl_gene_id))
-sum(!is.na(hgnc$entrez_id))
 
-sum(!is.na(ncbi.gene.info$ensembl_gene_id))
-sum(!is.na(ncbi.gene.info$hgnc_id))
+gene1 <- hgnc$ensembl_gene_id[which(!is.na(hgnc$ensembl_gene_id))]
+gene1
+
+gene2 <- ensembl$ensembl_gene_id[which(!is.na(ensembl$hgnc_id))]
+gene2
+
+gene2[which(!gene2 %in% gene1)]
+
+
+#############################################################################################
+# ================================== Merge Annotations ==================================== #
+#############################################################################################
+
+####### HGNC + NCBI
+
+hgnc.tmp <- hgnc[match(ncbi.gene.info$GeneID, hgnc$entrez_id),]
+dim(hgnc.tmp)
+dim(ncbi.gene.info)
+
+idx <- which(!hgnc$hgnc_id %in% hgnc.tmp$hgnc_id)
+idx
+
+hgnc.tmp <- rbind(hgnc.tmp, hgnc[idx,])
+dim(hgnc.tmp)
+View(hgnc.tmp)
+
+ncbi.gene.info[(nrow(ncbi.gene.info)+1):nrow(hgnc.tmp),] <- NA
+dim(ncbi.gene.info)
+
+ncbi.hgnc <- data.frame(ncbi.gene.info, hgnc.tmp)
+
+
+which(ncbi.hgnc$GeneID!=ncbi.hgnc$entrez_id)
+which(ncbi.hgnc$hgnc_id!=ncbi.hgnc$hgnc_id.1)
+which(ncbi.hgnc$ensembl_gene_id!=ncbi.hgnc$ensembl_gene_id.1)
+
+ncbi.hgnc[which(ncbi.hgnc$hgnc_id!=ncbi.hgnc$hgnc_id.1),]
+
+idx <- which(is.na(ncbi.hgnc$ensembl_gene_id))
+ncbi.hgnc$ensembl_gene_id[idx] <- ncbi.hgnc$ensembl_gene_id.1[idx]
+
+
+####### HGNC + NCBI + ENSEMBL
+
+ensembl.tmp <- ensembl[match(ncbi.hgnc$ensembl_gene_id, ensembl$ensembl_gene_id),]
+dim(ensembl.tmp)
+
+idx <- which(!ensembl$ensembl_gene_id %in% ensembl.tmp$ensembl_gene_id)
+idx
+
+ensembl.tmp <- rbind(ensembl.tmp, ensembl[idx,])
+dim(ensembl.tmp)
+
+ncbi.hgnc[(nrow(ncbi.hgnc)+1):nrow(ensembl.tmp),] <- NA
+dim(ncbi.hgnc)
+
+ncbi.hgnc.ensembl <- data.frame(ncbi.hgnc, ensembl.tmp)
+View(ncbi.hgnc.ensembl)
+
+
+
+
+###
+idx <- which(is.na(ncbi.hgnc.ensembl$ensembl_gene_id))
+idx
+ncbi.hgnc.ensembl$ensembl_gene_id[idx] <- ncbi.hgnc.ensembl$ensembl_gene_id.2[idx]
+
+
+###
+idx <- which(is.na(ncbi.hgnc.ensembl$GeneID))
+idx
+ncbi.hgnc.ensembl$GeneID[idx] <- ncbi.hgnc.ensembl$entrez_id[idx]
+
+idx <- which(is.na(ncbi.hgnc.ensembl$GeneID))
+idx
+ncbi.hgnc.ensembl$GeneID[idx] <- ncbi.hgnc.ensembl$entrezgene_id[idx]
+
+###
+idx <- which(is.na(ncbi.hgnc.ensembl$hgnc_id))
+idx
+ncbi.hgnc.ensembl$hgnc_id[idx] <- ncbi.hgnc.ensembl$hgnc_id.1[idx]
+
+idx <- which(is.na(ncbi.hgnc.ensembl$hgnc_id))
+idx
+ncbi.hgnc.ensembl$hgnc_id[idx] <- ncbi.hgnc.ensembl$hgnc_id.2[idx]
+
+
+
+#############################################################################################
+# ===================================== Final Check ======================================= #
+#############################################################################################
+
+# ENSEMBL ID
+test <- data.frame(ncbi.hgnc.ensembl$ensembl_gene_id, ncbi.hgnc.ensembl$ensembl_gene_id.1, 
+                   ncbi.hgnc.ensembl$ensembl_gene_id.2, stringsAsFactors = F)
+which(test$ncbi.hgnc.ensembl.ensembl_gene_id!=test$ncbi.hgnc.ensembl.ensembl_gene_id.1)
+which(test$ncbi.hgnc.ensembl.ensembl_gene_id!=test$ncbi.hgnc.ensembl.ensembl_gene_id.2)
+
+idx <- which(test$ncbi.hgnc.ensembl.ensembl_gene_id!=test$ncbi.hgnc.ensembl.ensembl_gene_id.1)
+test[idx,]
+
+
+
+
+
+
+# HGNC ID
+test <- data.frame(ncbi.hgnc.ensembl$hgnc_id, ncbi.hgnc.ensembl$hgnc_id.1, 
+                   ncbi.hgnc.ensembl$hgnc_id.2, stringsAsFactors = F)
+which(test$ncbi.hgnc.ensembl.hgnc_id!=test$ncbi.hgnc.ensembl.hgnc_id.1)
+which(test$ncbi.hgnc.ensembl.hgnc_id!=test$ncbi.hgnc.ensembl.hgnc_id.2)
+
+
+# ENTREZ ID
+test <- data.frame(ncbi.hgnc.ensembl$GeneID, ncbi.hgnc.ensembl$entrez_id, ncbi.hgnc.ensembl$entrez_id)
+which(test$ncbi.hgnc.ensembl.GeneID!=test$ncbi.hgnc.ensembl.entrez_id)
+which(test$ncbi.hgnc.ensembl.GeneID!=test$ncbi.hgnc.ensembl.entrez_id.1)
+
+
+View(test)
