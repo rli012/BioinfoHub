@@ -285,34 +285,3 @@ sum(!is.na(hgnc$entrez_id))
 
 sum(!is.na(ncbi.gene.info$ensembl_gene_id))
 sum(!is.na(ncbi.gene.info$hgnc_id))
-
-
-
-sum(duplicated(hgnc$ensembl_gene_id))
-sum(duplicated(hgnc$entrez_id))
-
-ensembl$ensembl_gene_id[match(ensembl$ensembl_gene_id[785:787],ensembl$ensembl_gene_id)]
-
-sum(duplicated(ensembl$ensembl_gene_id))
-
-
-sum(duplicated(hgnc$hgnc_id))
-
-sum(duplicated(ncbi.gene.info$GeneID))
-
-idx <- which(duplicated(ensembl$ensembl_gene_id))
-View(ensembl[ensembl$ensembl_gene_id %in% ensembl$ensembl_gene_id[idx],])
-
-
-
-
-gene1 <- hgnc$ensembl_gene_id[which(!is.na(hgnc$ensembl_gene_id))]
-gene1
-
-gene2 <- ensembl$ensembl_gene_id[which(!is.na(ensembl$hgnc_id))]
-gene2
-
-
-gene2[which(!gene2 %in% gene1)]
-
-View(hgnc)
