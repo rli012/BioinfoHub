@@ -2,25 +2,33 @@
 library(GEOquery)
 library(oligo)
 
-gse <- 'GSE46691'
-
-seriesMatrix <- getGEO(gse, AnnotGPL = FALSE, GSEMatrix = TRUE, destdir = 'data/fromGEO/') # AnnotGPL = TRUE
-#seriesMatrix <- getGEO(filename="~/Downloads/GSE60341_series_matrix.txt.gz")
-
+###
+gse <- 'GSE59745'
+seriesMatrix <- getGEO(gse, AnnotGPL = FALSE, getGPL = FALSE, GSEMatrix = TRUE, destdir = 'data/fromGEO/') # AnnotGPL = TRUE
+names(seriesMatrix)
 phenoData <- pData(seriesMatrix[[1]])
-phenoData
-
-phenoData <- phenoData[,c(1,2,8,36:38)]
+View(phenoData)
 colnames(phenoData)
 
+keep <- c('title','geo_accession','source_name_ch1',
+          colnames(phenoData)[grep(':ch1|description', colnames(phenoData))],
+          'contact_institute')
+
+phenoData <- phenoData[,keep]
+phenoData
+
 colnames(phenoData) <- gsub(':ch1', '', colnames(phenoData))
-colnames(phenoData) <- gsub(' ', '_', colnames(phenoData))
+colnames(phenoData) <- gsub(' |-|\\.', '_', colnames(phenoData))
+colnames(phenoData)
 
-colnames(phenoData)[3] <- 'tissue'
 
-seriesMatrix[[1]]@featureData@data
+###
+colnames(phenoData)[5] <- c('metastasis_status')
+colnames(phenoData)[7:9] <- c('preop_psa', 'bcr_status','pathological_t_stage')
 
-View(phenoData)
+
+saveRDS(phenoData, file=paste0('data/rData/', gse, '_Metadata.RDS'))
+
 
 exprData <- exprs(seriesMatrix[[1]])
 View(exprData)
