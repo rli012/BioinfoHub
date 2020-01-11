@@ -6,7 +6,7 @@ Garrett Grolemund and Hadley Wickham: [R for Data Science](https://r4ds.had.co.n
 
 ## [Biostars](https://www.biostars.org/)
 ## [Stack Overflow](https://stackoverflow.com/)
-## [生信技能树](http://www.biotrainee.com/)
+## [生信技能树(语雀)](https://www.yuque.com/biotrainee)
 ## [生信人](https://shengxin.ren/)
 
 # Infrastructure/Core Facility
