@@ -28,7 +28,9 @@ body=dashboardBody(
 ui <- dashboardPage(title='PCa Transcriptomes', skin = 'green', header, sidebar, body)
 
 server <- function(input, output, session) {
-
+  output$plot <- renderPlot({})
+  outpout$text <- renderText({})
+  output$table <- DT::renderDataTable({})
 }
 
 
