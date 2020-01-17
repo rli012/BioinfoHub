@@ -64,3 +64,15 @@ gene.expression <- selectizeInput(inputId = "gene.expression", label=h4(strong('
                                              }")
                                   ))
 
+  
+
+output$gse <- renderUI({
+    
+    idx <- input$dataset_rows_selected
+    accession <- as.character(dataset[idx,'GEO Accession'])
+    
+    base.url <- 'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc='
+    link <- paste0(base.url, accession)
+    tags$iframe(src=link, seamless="seamless", width='100%', height='600')
+  })
+  
