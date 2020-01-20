@@ -66,13 +66,22 @@ gene.expression <- selectizeInput(inputId = "gene.expression", label=h4(strong('
 
   
 
-output$gse <- renderUI({
+  output$gse <- renderUI({
     
     idx <- input$dataset_rows_selected
     accession <- as.character(dataset[idx,'GEO Accession'])
     
-    base.url <- 'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc='
-    link <- paste0(base.url, accession)
+    #if (accession=='TCGA-PRAD') {
+    #  link <- 'https://portal.gdc.cancer.gov/projects/TCGA-PRAD'
+    if (accession=='DKFZ') {
+      link <- 'https://www.cbioportal.org/study/summary?id=prostate_dkfz_2018'
+    } else if (accession=='E-MTAB-6128') {
+      link <- 'https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-6128/'
+    } else {
+      base.url <- 'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc='
+      link <- paste0(base.url, accession)
+    }
+    
     tags$iframe(src=link, seamless="seamless", width='100%', height='600')
   })
   
