@@ -168,3 +168,109 @@ volcanoPlotFun <- function(dataForVolcanoPlot, logFcThreshold, adjPvalThreshold)
       return (p)
 }
 
+
+
+corrplotFun <- function(dataForCorrPlot) {
+  
+  dataForCorrPlot$group <- log2(dataForCorrPlot$group+1)
+  
+  corr <- cor.test(dataForCorrPlot$expr, dataForCorrPlot$group)$estimate
+  p <- cor.test(dataForCorrPlot$expr, dataForCorrPlot$group)$p.value
+
+  anno_text <- data.frame(
+    label = paste0('corr = ', round(corr,3), '\n',
+                   'p = ', ifelse(p >= 0.01,
+                                  formatC(p, digits = 2),
+                                  formatC(p, format = "e", digits = 2))),
+    x     = max(dataForCorrPlot$expr),
+    y     = max(dataForCorrPlot$group)
+  )
+  
+  p <- ggplot(data=dataForCorrPlot, aes(x=expr, y=group)) +
+    geom_point(size=1, color='darkred') +
+    geom_smooth(method='lm') +
+    #geom_text(data    = anno_text,
+    #          mapping = aes(x = x, y = y, label = label),
+    #          size=4.5) +
+    #facet_wrap(~platform) +
+    labs(x='Expression Level', y='Preoperative PSA') +
+    theme_bw() +
+    theme(axis.line = element_blank(),
+          #panel.grid.major = element_blank(),
+          #panel.grid.minor = element_blank(),
+          panel.border = element_blank(),
+          panel.background = element_blank()) +
+    theme(legend.position = 'none')+
+    theme(axis.text = element_text(size=14),
+          axis.title = element_text(size=16),
+          strip.text.x = element_text(size=14, face='bold'))
+  
+  return (p)
+  
+}
+
+
+pieplotFun <- function(dataForPiePlot) {
+  
+  p <- ggplot(dataForPiePlot, aes(x = "", y = num, fill = sam)) +
+    geom_bar(width = 1, stat = "identity", color = "white", size=0.5) +
+    scale_fill_manual(values = c(google.yellow, google.blue, google.red, google.green)) +
+    coord_polar("y", start = 0) + 
+    geom_text(aes(label = num), position = position_stack(vjust = 0.5), size=4.5) +
+    theme_void() +
+    theme(legend.title = element_blank(),
+          legend.position = 'right',
+          legend.text = element_text(size=12)) +
+    theme(plot.margin =  margin(t = 0.1, r = 0.1, b = 0.1, l = 0.1, unit = "cm"))
+  
+  return (p)
+}
+
+barplotFun <- function(dataForBarPlot) {
+  
+  p <- ggplot(data=dataForBarPlot, mapping=aes(x=group, y=num, fill=google.blue)) +
+    geom_bar(stat='identity') +
+    scale_x_discrete(limits=dataForBarPlot$group) +
+    labs(x='', y='Number of samples') + 
+    scale_fill_manual(values=c(google.blue)) +
+    theme_bw()+theme(axis.line = element_line(colour = "black"),
+                     #panel.grid.major = element_blank(),
+                     #panel.grid.minor = element_blank(),
+                     panel.border = element_blank(),
+                     panel.background = element_blank()) +
+    theme(axis.text=element_text(size=12, color='black'),
+          axis.text.x = element_text(angle=45, hjust=1),
+          axis.title=element_text(size=14)) +
+    theme(legend.text = element_text(size=12),
+          legend.title = element_blank(),
+          legend.position = 'none') +
+    theme(plot.margin =  margin(t = 0.1, r = 0.1, b = 0.1, l = 0.1, unit = "cm"))
+  
+  return (p)
+}
+
+
+histogramFun <- function(dataForHistogram) {
+
+  p <- ggplot(data=dataForHistogram, aes(log2(preop_psa+1), fill=google.blue)) + 
+    geom_histogram() + 
+    scale_fill_manual(values=c(google.blue)) +
+    labs(x=expression('Log'[2]*'(Preoperative PSA + 1)'), y='Count') +
+    theme_bw()+theme(axis.line = element_line(colour = "black"),
+                     #panel.grid.major = element_blank(),
+                     #panel.grid.minor = element_blank(),
+                     panel.border = element_blank(),
+                     panel.background = element_blank()) +
+    theme(axis.text=element_text(size=12, color='black'),
+          axis.title=element_text(size=14)) +
+    theme(legend.text = element_text(size=12),
+          legend.title = element_blank(),
+          legend.position = 'none') +
+    theme(plot.margin =  margin(t = 0.1, r = 0.1, b = 0.1, l = 0.1, unit = "cm"))
+    
+  return (p)
+  
+  
+}
+
+
