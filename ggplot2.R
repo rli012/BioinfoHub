@@ -260,3 +260,21 @@ p1 <- ggplot(dataForScatterPlot, aes(x=x, y=y)) + geom_point(aes(color=Reg), siz
 #theme(plot.margin =  margin(t = 0.25, r = 0.25, b = 0.25, l = 1, unit = "cm"))
 
 p1
+
+                       
+####### pheatmap
+pheatmap(dataForHeatmap,
+         scale = 'none',
+         cluster_cols = F, 
+         display_numbers = annoMatrix,
+         border_color = NA,
+         cluster_rows = F,
+         fontsize_col = 12,
+         fontsize_number = 10,
+         treeheight_row = 0,
+         show_rownames = T,
+         annotation_legend = F,
+         #breaks = c(seq(-mx,mx, mx*2/100)),
+         breaks = c(seq(-8,8, 8*2/100)),
+         color=col_fun
+)
