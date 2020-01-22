@@ -263,6 +263,10 @@ p1
 
                        
 ####### pheatmap
+library(pheatmap)
+library(colorspace)
+col_fun = diverge_hcl(100, c = 100, l = c(50,90), power = 1.5)
+                   
 pheatmap(dataForHeatmap,
          scale = 'none',
          cluster_cols = F, 
