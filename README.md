@@ -92,3 +92,32 @@ Novel curated dataset comprising nearly all human public, primary bulk samples i
 ## [MD Anderson Cancer Center: Public Software](https://bioinformatics.mdanderson.org/public-software/)
 ## [VDJdb](https://vdjdb.cdr3.net/)
 
+
+
+
+
+## RNAseq
+
+### Quality Control
+* fastp
+* FastQC
+* AfterQC
+* MultiQC
+
+### Trimming
+* fastp
+* Trimmomatic
+* cutadapt
+
+
+### Alignment
+* STAR
+* HISAT2
+
+## Assembly
+
+
+## Quantification
+* featureCounts
+* HTSeq
+* RSME
