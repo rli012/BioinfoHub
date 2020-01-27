@@ -27,7 +27,11 @@ Over the next dozen years, TCGA generated over 2.5 petabytes of genomic, epigeno
 
 ## [ICGC Data Portal](https://dcc.icgc.org/)
 
+The ICGC, established in 2007, aimed to define the genomes of 25,000 primary untreated cancers (the 25K Initiative). The ICGC solved numerous data governance, ethical and logistical challenges to make global genomic data sharing for cancer possible, providing the international community with comprehensive genomic data for many cancer types.  
+
 ## [CLLE: Cancer Cell Line Encyclopedia](https://portals.broadinstitute.org/ccle/about)
+
+The CCLE (Cancer Cell Line Encyclopedia) project is a collaboration between the Broad Institute, and the Novartis Institutes for Biomedical Research and its Genomics Institute of the Novartis Research Foundation to conduct a detailed genetic and pharmacologic characterization of a large panel of human cancer models, to develop integrated computational analyses that link distinct pharmacologic vulnerabilities to genomic patterns and to translate cell line integrative genomics into cancer patient stratification. The CCLE provides public access to genomic data, analysis and visualization for over 1100 cell lines.  
 
 ## [CrownBio](https://www.crownbio.com/)
 
