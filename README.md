@@ -125,3 +125,9 @@ Novel curated dataset comprising nearly all human public, primary bulk samples i
 * featureCounts
 * HTSeq
 * RSME
+
+## Pathway Analysis
+* Hypergeometic test
+* Gene Set Enrichment Analysis
+* Camera
+* Single sample GSEA
