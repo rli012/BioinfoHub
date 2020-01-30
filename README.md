@@ -40,7 +40,7 @@ The CCLE (Cancer Cell Line Encyclopedia) project is a collaboration between the 
 
 ## [DICE: Database of Immune Cell eQTL, Expression & Epigenomics](https://dice-database.org/)
 
-TPM
+While many genetic variants have been associated with risk for human diseases, how these variants affect gene expression in various cell types remains largely unknown. To address this gap, the DICE (Database of Immune Cell Expression, Expression quantitative trait loci (eQTLs) and Epigenomics) project was established. Considering all human immune cell types and conditions studied, we identified cis-eQTLs for a total of 12,254 unique genes, which represent 61% of all protein-coding genes expressed in these cell types. Strikingly, a large fraction (41%) of these genes showed a strong cis-association with genotype only in a single cell type. We also found that biological sex is associated with major differences in immune cell gene expression in a highly cell-specific manner. These datasets will help reveal the effects of disease risk-associated genetic polymorphisms on specific immune cell types, providing mechanistic insights into how they might influence pathogenesis.  
 
 ## [Blueprint](http://www.blueprint-epigenome.eu/)
 
@@ -130,4 +130,11 @@ Novel curated dataset comprising nearly all human public, primary bulk samples i
 * Hypergeometic test
 * Gene Set Enrichment Analysis
 * Camera
-* Single sample GSEA
+* single sample GSEA
+* gsva
+
+## Cell type deconvolution
+* xCell
+* CIBERSORT
+* CIBERSORTx
+* [ABIS: ABsolute Immune Signal (ABIS) deconvolution](https://github.com/giannimonaco/ABIS)
