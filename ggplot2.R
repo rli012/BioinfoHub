@@ -282,3 +282,30 @@ pheatmap(dataForHeatmap,
          breaks = c(seq(-8,8, 8*2/100)),
          color=col_fun
 )
+
+### Correlation
+
+xpos <- (min(dataForCorrPlot$signature)+max(dataForCorrPlot$signature))/2
+ypos <- as.numeric(summary(dataForCorrPlot$virus)[6])+0.5
+
+p <- 0.049
+c <- 0.458
+
+ggplot(dataForCorrPlot, aes(x=signature, y=virus)) + 
+  geom_point(aes(shape=group, color=group)) + 
+  labs(x='', y='')+
+  geom_smooth(method="lm",se=FALSE, col='darkgreen', size=0.5) + 
+  scale_colour_manual(breaks = group, 
+                      values = c('chocolate1', 'blue')) +
+  ggplot2::annotate("text", x = xpos, y = ypos, 
+                    label = paste0('Pearson Correlation = ', c, '\nP Value = ', p), size = 4.5) +
+  theme_bw()+theme(legend.title = element_blank(),
+                   legend.text = element_text(size=14),
+                   axis.line = element_line(colour = "black"),
+                   panel.grid.major = element_blank(),
+                   panel.grid.minor = element_blank(),
+                   panel.border = element_rect(colour='white'),
+                   panel.background = element_blank(),
+                   axis.text = element_text(size=14),
+                   axis.title = element_text(size=16))
+
