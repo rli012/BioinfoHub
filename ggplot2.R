@@ -309,3 +309,58 @@ ggplot(dataForCorrPlot, aes(x=signature, y=virus)) +
                    axis.text = element_text(size=14),
                    axis.title = element_text(size=16))
 
+                       
+### heatmap
+library(ComplexHeatmap)
+ht <- Heatmap(as.matrix(dataForHeatmap),
+              #name = 'Expression',
+              
+              # COLOR
+              #col = colorRampPalette(rev(c("red",'white','blue')), space = "Lab")(100),
+              col=col_fun,
+              na_col = 'grey',
+              
+              # MAIN PANEL
+              column_title = NULL,
+              cluster_columns = FALSE,
+              cluster_rows = FALSE,
+              show_row_dend = TRUE,
+              column_order = o,
+              show_column_dend = FALSE,
+              show_row_names = TRUE,
+              show_column_names = TRUE, 
+              row_names_side = 'left',
+              column_names_rot = 90,
+              #column_names_centered = TRUE,
+              column_names_gp = gpar(fontsize = 12),
+              row_names_gp = gpar(fontsize = 10),
+              row_names_max_width = unit(15,'cm'),
+              column_split = factor(c(rep("Module 1",8), rep('Module 2', 8), rep('Module 3', 9),
+                                      rep('Module 4', 10), rep('Module 5', 8))),
+
+              #column_names_max_height = unit(10, 'cm'),
+              #column_split = factor(phenoData$Day,
+              #                      levels=str_sort(unique(phenoData$Day), numeric = T)),
+              
+              #column_order = rownames(phenoData),
+              
+              # ANNOTATION
+              #top_annotation = topAnnotation,
+              
+              
+              cell_fun = function(j, i, x, y, w, h, col) { # add text to each grid
+                grid.text(annoMatrix[i, j], x, y, gp = gpar(fontsize = 10, col = "black", fill = 'black'))
+              },
+              
+              # LEGEND
+              heatmap_legend_param = list(
+                at = c(-1, -0.5, 0, 0.5, 1),
+                #labels = c("low", "zero", "high"),
+                title = expression('Pearson Correlation'),
+                title_position = 'leftcenter-rot',
+                legend_height = unit(3, "cm"),
+                just = c("right", "top")
+              ))
+
+draw(ht,annotation_legend_side = "right",row_dend_side = "left", heatmap_legend_side = "right")
+
