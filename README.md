@@ -44,6 +44,8 @@ While many genetic variants have been associated with risk for human diseases, h
 
 ## [Blueprint](http://www.blueprint-epigenome.eu/)
 
+BLUEPRINT is a high impact FP7 project aiming to produce a blueprint of haemopoetic epigenomes. Our goal is to apply highly sophisticated functional genomics analysis on a clearly defined set of primarily human samples from healthy and diseased individuals, and to provide at least 100 reference epigenomes to the scientific community. This resource-generating activity will be complemented by research into blood-based diseases, including common leukaemias and autoimmune disease (Type 1 Diabetes), by discovery and validation of epigenetic markers for diagnostic use and by epigenetic target identification. This may eventually lead to the development of novel and more individualised medical treatments.
+
 ## [FANTOM5: Funcional Annotation of The Mammalian Genome](http://fantom.gsc.riken.jp/5/)
 
 Gene expression data (Count and TPM): http://fantom.gsc.riken.jp/5/datafiles/latest/extra/gene_level_expression/
@@ -51,7 +53,11 @@ Gene expression data (Count and TPM): http://fantom.gsc.riken.jp/5/datafiles/lat
 
 ## [ImmuneCo: ](https://immuco.bjmu.edu.cn/)
 
+ImmuCo is a database of gene Co-expression and Correlation in Immune cells. The current version includes expression data for a total of 20,283 human and 20,963 mouse genes from the Affymetrix Human Genome U133 Plus 2.0 and Mouse Genome 430 2.0 microarrays, respectively, enabling co-expression and correlation analysis between any two genes. These arrays are from 11 human and 7 mouse cell types, including 18 human and 10 mouse cell groups. The signal values used for analysis were derived using the MAS 5.0 algorithm. Co-expression is reflected by the signal values and detection calls, whereas expression correlation and strength are reflected by a Pearson correlation coefficient. A scatter plot of the signal values is also provided to graphically illustrate the extent of correlation. ImmuCo supports requests using gene symbol (or alias), Entrez Gene ID, and probe set ID. Currently, 20,283 human and 20,963 mouse genes can be queried.
+
 ## [RefDIC: Reference Database of Immune Cells](http://refdic.rcai.riken.jp/welcome.cgi)
+
+RefDIC is an open resource compendium of quantitative mRNA/Protein profile data obtained from microarray and 2DE-gel based proteome experiments specifically for immune cells. You can easily retrieve various aspects of mRNA/Protein profiles of immune cells from RefDIC. We will extend and update the contents of RefDIC on a regular basis to offer an information platform that fully exploits the power of genomics in immunology. This database has been constructed with continuous support, valuable research input and feedback comments from our colleagues at RIKEN Research Center for Allergy and Immunology (RCAI). We greatly appreciate their thoughtful collaboration on the RefDIC project.
 
 ## [IRIS: Immune response in silico](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22886)
 We isolated twelve different types of human leukocytes from peripheral blood and bone marrow, treated them to induce activation and/or differentiation, and profiled their gene expression before and after treatment.  
