@@ -78,6 +78,8 @@ Novel curated dataset comprising nearly all human public, primary bulk samples i
 
 ## [Harmonizome](http://amp.pharm.mssm.edu/Harmonizome/)
 
+Thanks to technological advances in genomics, transcriptomics, proteomics, metabolomics, and related fields, projects that generate a large number of measurements of the properties of cells, tissues, model organisms, and patients are becoming commonplace in biomedical research. In addition, curation projects are making great progress mining biomedical literature to extract and aggregate decades worth of research findings into online databases. Such projects are generating a wealth of information that potentially can guide research toward novel biomedical discoveries and advances in healthcare. To facilitate access to and learning from biomedical Big Data, we created the Harmonizome: a collection of information about genes and proteins from 114 datasets provided by 66 online resources.
+
 ## [HCMDB: Human Cancer Metastasis Database](https://hcmdb.i-sanger.com/)
 
 ## [AAgAtlas: A human autoantigen database](http://biokb.ncpsb.org/aagatlas/index.php)
