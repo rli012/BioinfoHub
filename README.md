@@ -83,6 +83,9 @@ Thanks to technological advances in genomics, transcriptomics, proteomics, metab
 ## [HCMDB: Human Cancer Metastasis Database](https://hcmdb.i-sanger.com/)
 
 ## [AAgAtlas: A human autoantigen database](http://biokb.ncpsb.org/aagatlas/index.php)
+
+A database containing 1,126 well-annotated autoantigens, determined by text-mining and manual curation [10]. AAgAtlas database 1.0 provides a user-friendly interface to conveniently browse, retrieve and download the list of autoantigens and their associated diseases
+
 ## [Open Targets](https://www.opentargets.org/)
 ## [PreMedKB](http://www.fudan-pgx.org/premedkb/index.html#/home)
 ## [OncoKB](https://oncokb.org/)
