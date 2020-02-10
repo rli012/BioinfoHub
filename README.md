@@ -66,6 +66,10 @@ B cells, CD14+ cells, CD4+ CD45RO+ CD45RA- T cells, CD4+ T cells, CD8+ T cells, 
 
 ## [BioGPS](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49910)
 
+## [Expression Atlas](https://www.ebi.ac.uk/gxa/home)
+
+Gene expresion across species and biological conditions (62 species, 3,699 studies, 121,342 assays)
+
 ## [CellO Datasets](http://deweylab.biostat.wisc.edu/cell_type_classification/)
 Novel curated dataset comprising nearly all human public, primary bulk samples in the NCBI’s Sequence Read Archive
 
