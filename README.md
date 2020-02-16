@@ -150,7 +150,8 @@ A database containing 1,126 well-annotated autoantigens, determined by text-mini
 * RSME
 
 ## Pathway Analysis
-* Hypergeometic test
+* Metascape
+* clusterProfiler
 * Gene Set Enrichment Analysis
 * Camera
 * single sample GSEA
