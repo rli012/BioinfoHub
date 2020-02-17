@@ -134,16 +134,16 @@ A database containing 1,126 well-annotated autoantigens, determined by text-mini
 
 
 ### Alignment
-* STAR
-* HISAT2
+* [STAR](https://github.com/alexdobin/STAR)
+* [HISAT2](http://daehwankimlab.github.io/hisat2/)
 
 ## Assembly
 
 
 ## Quantification
-* featureCounts
-* HTSeq
-* RSME
+* [featureCounts](http://bioinf.wehi.edu.au/featureCounts/)
+* [HTSeq](https://htseq.readthedocs.io/en/release_0.11.1/)
+* [RSME](https://github.com/bli25broad/RSEM_tutorial)
 
 ## Pathway Analysis
 * [Metascape](http://metascape.org/gp/index.html#/main/step1)
