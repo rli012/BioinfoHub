@@ -112,10 +112,6 @@ A database containing 1,126 well-annotated autoantigens, determined by text-mini
 # Online Tools
 
 ## [DICE Tools](https://tools.dice-database.org/)
-## [xCell](http://xcell.ucsf.edu/)
-## [CIBERSORT](https://cibersort.stanford.edu/)
-## [CIBERSORTx](https://cibersortx.stanford.edu/)
-## [ABIS: ABsolute Immune Signal (ABIS) deconvolution](https://github.com/giannimonaco/ABIS)
 ## [MD Anderson Cancer Center: Public Software](https://bioinformatics.mdanderson.org/public-software/)
 ## [VDJdb](https://vdjdb.cdr3.net/)
 
@@ -158,7 +154,7 @@ A database containing 1,126 well-annotated autoantigens, determined by text-mini
 * gsva
 
 ## Cell type deconvolution
-* xCell
-* CIBERSORT
-* CIBERSORTx
+* [xCell](http://xcell.ucsf.edu/)
+* [CIBERSORT](https://cibersort.stanford.edu/)
+* [CIBERSORTx](https://cibersortx.stanford.edu/)
 * [ABIS: ABsolute Immune Signal (ABIS) deconvolution](https://github.com/giannimonaco/ABIS)
