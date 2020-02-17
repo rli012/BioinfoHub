@@ -146,9 +146,9 @@ A database containing 1,126 well-annotated autoantigens, determined by text-mini
 * RSME
 
 ## Pathway Analysis
-* Metascape
-* clusterProfiler
-* Gene Set Enrichment Analysis
+* [Metascape](http://metascape.org/gp/index.html#/main/step1)
+* [clusterProfiler](https://bioconductor.org/packages/release/bioc/vignettes/clusterProfiler/inst/doc/clusterProfiler.html)
+* [Gene Set Enrichment Analysis](https://www.gsea-msigdb.org/gsea/index.jsp)
 * Camera
 * single sample GSEA
 * gsva
