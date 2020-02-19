@@ -122,15 +122,15 @@ A database containing 1,126 well-annotated autoantigens, determined by text-mini
 ## RNAseq
 
 ### Quality Control
-* fastp
-* FastQC
-* AfterQC
-* MultiQC
+* [fastp](https://github.com/OpenGene/fastp)
+* [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+* [AfterQC](https://github.com/OpenGene/AfterQC)
+* [MultiQC](https://multiqc.info/)
 
 ### Trimming
-* fastp
-* Trimmomatic
-* cutadapt
+* [fastp](https://github.com/OpenGene/fastp)
+* [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
+* [Cutadapt](https://cutadapt.readthedocs.io/en/stable/)
 
 
 ### Alignment
