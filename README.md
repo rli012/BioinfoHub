@@ -103,6 +103,7 @@ A database containing 1,126 well-annotated autoantigens, determined by text-mini
 ## [OncoKB](https://oncokb.org/)
 ## [GDSC: Genomics of Drug Sensitivity in Cancer](https://www.sanger.ac.uk/science/tools/gdsc-genomics-drug-sensitivity-cancer)
 ## [GSEA | MSigDB - Broad Institute](http://software.broadinstitute.org/gsea/msigdb/index.jsp)  
+## [Mouse and human orthologs of the MSigDB in R format](http://bioinf.wehi.edu.au/software/MSigDB/)
 ## [ImmPort](https://www.immport.org/home)
 ## [Zenodo](https://zenodo.org/)
 
@@ -149,9 +150,9 @@ A database containing 1,126 well-annotated autoantigens, determined by text-mini
 * [Metascape](http://metascape.org/gp/index.html#/main/step1)
 * [clusterProfiler](https://bioconductor.org/packages/release/bioc/vignettes/clusterProfiler/inst/doc/clusterProfiler.html)
 * [Gene Set Enrichment Analysis](https://www.gsea-msigdb.org/gsea/index.jsp)
-* Camera
+* CAMERA
 * single sample GSEA
-* gsva
+* [GSVA](https://bioconductor.org/packages/release/bioc/html/GSVA.html)
 
 ## Cell type deconvolution
 * [xCell](http://xcell.ucsf.edu/)
