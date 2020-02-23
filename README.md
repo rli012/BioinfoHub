@@ -116,7 +116,7 @@ A database containing 1,126 well-annotated autoantigens, determined by text-mini
 ## [DICE Tools](https://tools.dice-database.org/)
 ## [MD Anderson Cancer Center: Public Software](https://bioinformatics.mdanderson.org/public-software/)
 ## [VDJdb](https://vdjdb.cdr3.net/)
-
+VDJdb is a curated database of T-cell receptor (TCR) sequences with known antigen specificities. The primary goal of VDJdb is to facilitate access to existing information on T-cell receptor antigen specificities, i.e. the ability to recognize certain epitopes in a certain MHC contexts.
 
 
 
