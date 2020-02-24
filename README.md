@@ -103,7 +103,10 @@ A database containing 1,126 well-annotated autoantigens, determined by text-mini
 ## [PreMedKB](http://www.fudan-pgx.org/premedkb/index.html#/home)
 ## [OncoKB](https://oncokb.org/)
 ## [GDSC: Genomics of Drug Sensitivity in Cancer](https://www.sanger.ac.uk/science/tools/gdsc-genomics-drug-sensitivity-cancer)
-## [GSEA | MSigDB - Broad Institute](http://software.broadinstitute.org/gsea/msigdb/index.jsp)  
+## [GSEA | MSigDB - Broad Institute](http://software.broadinstitute.org/gsea/msigdb/index.jsp) 
+
+Gene Set Enrichment Analysis (GSEA) is a computational method that determines whether an a priori defined set of genes shows statistically significant, concordant differences between two biological states (e.g. phenotypes).
+
 ## [Mouse and human orthologs of the MSigDB in R format](http://bioinf.wehi.edu.au/software/MSigDB/)
 ## [ImmPort](https://www.immport.org/home)
 ## [Zenodo](https://zenodo.org/)
