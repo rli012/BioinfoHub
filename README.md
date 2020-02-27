@@ -151,17 +151,18 @@ VDJdb is a curated database of T-cell receptor (TCR) sequences with known antige
 * [RSME](https://github.com/bli25broad/RSEM_tutorial)
 
 ## Differential Expression Analysis
-* [limma]
-* [edgeR]
-* [DESeq2]
+* [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)
+* [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html)
+* [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html)
 
 ## Pathway Analysis
 * [Metascape](http://metascape.org/gp/index.html#/main/step1)
 * [clusterProfiler](https://bioconductor.org/packages/release/bioc/vignettes/clusterProfiler/inst/doc/clusterProfiler.html)
 * [Gene Set Enrichment Analysis](https://www.gsea-msigdb.org/gsea/index.jsp)
 * CAMERA
-* single sample GSEA
 * [GSVA](https://bioconductor.org/packages/release/bioc/html/GSVA.html)
+* [IPA](https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/analysis-and-visualization/qiagen-ipa/)
+* [Metacore](https://portal.genego.com/)
 
 ## Cell type deconvolution
 * [xCell](http://xcell.ucsf.edu/)
