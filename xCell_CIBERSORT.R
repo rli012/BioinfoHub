@@ -11,6 +11,60 @@ write.table(rpkmData, file='report/RPKM_for_ssGSEA.txt', quote=F, sep='\t')
 
 
 
+
+devtools::install_github('dviraran/xCell')
+library(xCell)
+
+lymphoids <- c('CD4+ memory T-cells','CD4+ naive T-cells','CD4+ T-cells','CD4+ Tcm','CD4+ Tem', # 'Tcm cells','Tem cells',
+               'CD8+ T-cells','CD8+ naive T-cells','CD8+ Tcm','CD8+ Tem','Tregs','Th1 cells','Th2 cells','Tgd cells',
+               'NK cells','NKT','B-cells','naive B-cells','Memory B-cells','Class-switched memory B-cells','pro B-cells',
+               'Plasma cells')
+
+myeloids <- c('Monocytes','Macrophages','Macrophages M1','Macrophages M2','DC','aDC','cDC','iDC','pDC',
+              'Neutrophils','Eosinophils','Mast cells','Basophils')
+
+stem.cells <- c('HSC','CLP','CMP','GMP','MEP','Megakaryocytes','Erythrocytes','Platelets')
+
+#immune.score <- 'ImmuneScore'
+
+cell.types.use <- c(lymphoids, myeloids, stem.cells)
+
+exprMatrix = read.table(file = 'RPKM_for_xCell.txt',header=TRUE,row.names=1, as.is=TRUE)
+exprMatrix[1:5,1:5]
+
+xcell.score <- xCellAnalysis(expr = exprMatrix, cell.types.use = cell.types.use, rnaseq = TRUE, scale = TRUE)
+View(xcell.score)
+
+#rawEnrichmentAnalysis
+#transformScores
+#spillOver
+
+names(xCell.data)
+
+raw.scores = rawEnrichmentAnalysis(as.matrix(exprMatrix),
+                                   xCell.data$signatures,
+                                   xCell.data$genes)
+
+colnames(raw.scores) = gsub("\\.1","",colnames(raw.scores))
+raw.scores = aggregate(t(raw.scores)~colnames(raw.scores),FUN=mean)
+rownames(raw.scores) = raw.scores[,1]
+raw.scores = raw.scores[,-1]
+raw.scores = t(raw.scores)
+View(raw.scores)
+
+cell.types = rownames(sdy$fcs) 
+
+cell.types.use = intersect(rownames(raw.scores),rownames(sdy$fcs))
+transformed.scores = transformScores(raw.scores[cell.types.use,],xCell.data$spill.array$fv)
+transformed.scores
+scores = spillOver(transformed.scores,xCell.data$spill.array$K)
+View(scores)
+#s = y
+A = intersect(colnames(exprMatrix),colnames(scores))
+scores = scores[,A]
+
+###########################
+
 cibersort <- t(xCell[,rownames(phenoData)])
 cibersort
 
