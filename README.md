@@ -100,6 +100,8 @@ Bgee is a database to retrieve and compare gene expression patterns in multiple 
 A database containing 1,126 well-annotated autoantigens, determined by text-mining and manual curation [10]. AAgAtlas database 1.0 provides a user-friendly interface to conveniently browse, retrieve and download the list of autoantigens and their associated diseases
 
 ## [Open Targets](https://www.opentargets.org/)
+Open Targets is an innovative, large-scale, multi-year, public-private partnership that uses human genetics and genomics data for systematic drug target identification and prioritisation.
+
 ## [PreMedKB](http://www.fudan-pgx.org/premedkb/index.html#/home)
 ## [OncoKB](https://oncokb.org/)
 ## [GDSC: Genomics of Drug Sensitivity in Cancer](https://www.sanger.ac.uk/science/tools/gdsc-genomics-drug-sensitivity-cancer)
