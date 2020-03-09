@@ -172,8 +172,14 @@ VDJdb is a curated database of T-cell receptor (TCR) sequences with known antige
 * [CIBERSORTx](https://cibersortx.stanford.edu/)
 * [ABIS: ABsolute Immune Signal (ABIS) deconvolution](https://github.com/giannimonaco/ABIS)
 
+### Time Series
+* [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)
+
 
 ## NanoString
+### Qulaity Control
+* nSolve
+* NACHO
 
 ## Mass Spectrometry
 
