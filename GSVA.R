@@ -15,6 +15,7 @@ summary(gsvaData)
 
 gsvaData <- gsva(expr = exprLogCPM,
                  gset.idx.list = signatures,
+                 min.sz=5, max.sz=2000,
                  method="gsva")
 
 
