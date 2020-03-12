@@ -89,6 +89,8 @@ Thanks to technological advances in genomics, transcriptomics, proteomics, metab
 
 Search the multi-organism collection of genome wide gene expression data obtained from publicly available sources like GEO, ArrayExpress, and SRA. The data has been processed uniformly and normalized using a set of standardized pipelines curated by the Childhood Cancer Data Lab (CCDL)
 
+## [Expression Atlas](https://www.ebi.ac.uk/gxa/home)
+
 ## [Bgee](https://bgee.org/)
 
 Bgee is a database to retrieve and compare gene expression patterns in multiple animal species, produced from multiple data types (RNA-Seq, Affymetrix, in situ hybridization, and EST data) and from multiple data sets (including GTEx data)
@@ -123,7 +125,7 @@ Gene Set Enrichment Analysis (GSEA) is a computational method that determines wh
 ## [VDJdb](https://vdjdb.cdr3.net/)
 VDJdb is a curated database of T-cell receptor (TCR) sequences with known antigen specificities. The primary goal of VDJdb is to facilitate access to existing information on T-cell receptor antigen specificities, i.e. the ability to recognize certain epitopes in a certain MHC contexts.
 
-
+## [UniProt](https://www.uniprot.org/)
 
 
 ## RNAseq
