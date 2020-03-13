@@ -89,8 +89,6 @@ Thanks to technological advances in genomics, transcriptomics, proteomics, metab
 
 Search the multi-organism collection of genome wide gene expression data obtained from publicly available sources like GEO, ArrayExpress, and SRA. The data has been processed uniformly and normalized using a set of standardized pipelines curated by the Childhood Cancer Data Lab (CCDL)
 
-## [Expression Atlas](https://www.ebi.ac.uk/gxa/home)
-
 ## [Bgee](https://bgee.org/)
 
 Bgee is a database to retrieve and compare gene expression patterns in multiple animal species, produced from multiple data types (RNA-Seq, Affymetrix, in situ hybridization, and EST data) and from multiple data sets (including GTEx data)
