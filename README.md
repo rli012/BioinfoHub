@@ -166,6 +166,9 @@ VDJdb is a curated database of T-cell receptor (TCR) sequences with known antige
 * [IPA](https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/analysis-and-visualization/qiagen-ipa/)
 * [Metacore](https://portal.genego.com/)
 
+### Protein-protein interactions
+* [STRING](https://string-db.org/)
+
 ### Cell type deconvolution
 * [xCell](http://xcell.ucsf.edu/)
 * [CIBERSORT](https://cibersort.stanford.edu/)
