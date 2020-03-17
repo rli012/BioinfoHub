@@ -168,6 +168,7 @@ VDJdb is a curated database of T-cell receptor (TCR) sequences with known antige
 
 ### Protein-protein interactions
 * [STRING](https://string-db.org/)
+* [Metascape](http://metascape.org/gp/index.html#/main/step1)
 
 ### Cell type deconvolution
 * [xCell](http://xcell.ucsf.edu/)
@@ -177,6 +178,9 @@ VDJdb is a curated database of T-cell receptor (TCR) sequences with known antige
 
 ### Time Series
 * [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)
+
+### Coexpression Network
+* [WGCNA](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/)
 
 
 ## NanoString
