@@ -151,6 +151,7 @@ VDJdb is a curated database of T-cell receptor (TCR) sequences with known antige
 * [featureCounts](http://bioinf.wehi.edu.au/featureCounts/)
 * [HTSeq](https://htseq.readthedocs.io/en/release_0.11.1/)
 * [RSME](https://github.com/bli25broad/RSEM_tutorial)
+* [Salmon](https://combine-lab.github.io/salmon/)
 
 ### Differential Expression Analysis
 * [limma](https://bioconductor.org/packages/release/bioc/html/limma.html)
