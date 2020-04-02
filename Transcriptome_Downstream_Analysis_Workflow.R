@@ -355,3 +355,17 @@ ggplot(data=keggForPlot, mapping=aes(x=Terms, y=-log(pvalue,10))) +
                    panel.grid.minor = element_blank(),
                    panel.border = element_rect(colour='white'),
                    panel.background = element_blank())
+
+                             
+########################
+                             
+pv.out <- pathview(gene.data = fcMatrix, #sim.cpd.data2[, 1:2], 
+                   pathway.id = 'hsa04110',gene.idtype ="symbol", limit= list(gene = c(-10,10), cpd = 1),
+                   bins = list(gene = 26, cpd= 10), 
+                   low = list(gene = "green", cpd = "blue"), 
+                   mid = list(gene = "gray", cpd = "gray"), 
+                   high = list(gene = "red", cpd ="yellow"),
+                   na.col = "lightyellow", plot.col.key=TRUE,
+                   species = "hsa", out.suffix = "Cell Cycle",
+                   keys.align = "y",
+                   kegg.native = T, match.data = F, multi.state = T, same.layer = T)
