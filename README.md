@@ -102,6 +102,9 @@ A database containing 1,126 well-annotated autoantigens, determined by text-mini
 ## [Open Targets](https://www.opentargets.org/)
 Open Targets is an innovative, large-scale, multi-year, public-private partnership that uses human genetics and genomics data for systematic drug target identification and prioritisation.
 
+## [DisGeNET - a database of gene-disease associations](https://www.disgenet.org/search)
+
+
 ## [PreMedKB](http://www.fudan-pgx.org/premedkb/index.html#/home)
 ## [OncoKB](https://oncokb.org/)
 ## [GDSC: Genomics of Drug Sensitivity in Cancer](https://www.sanger.ac.uk/science/tools/gdsc-genomics-drug-sensitivity-cancer)
