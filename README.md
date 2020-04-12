@@ -105,6 +105,9 @@ Open Targets is an innovative, large-scale, multi-year, public-private partnersh
 ## [DisGeNET - a database of gene-disease associations](https://www.disgenet.org/search)
 
 
+## [GWAScatlog]
+## [PhenoScanner]
+
 ## [PreMedKB](http://www.fudan-pgx.org/premedkb/index.html#/home)
 ## [OncoKB](https://oncokb.org/)
 ## [GDSC: Genomics of Drug Sensitivity in Cancer](https://www.sanger.ac.uk/science/tools/gdsc-genomics-drug-sensitivity-cancer)
