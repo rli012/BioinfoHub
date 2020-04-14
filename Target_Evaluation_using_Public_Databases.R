@@ -1,6 +1,41 @@
 library(ggplot2)
 library(dplyr)
 
+
+##### Gene Expression
+### GTEx
+### TCGA
+### Human Protein Atlas
+### Human Proteome Map
+
+#=== For Immune Cells ===#
+### DICE
+### Blueprint
+
+
+##### Genetic Association
+### GWAS catalog
+### Phenoscanner
+### PheWAS
+### ClinVar
+### GWAS Central
+### UK10K
+### DisGeNET
+
+### TOPMed
+### ExAC
+
+
+
+##### Knockout Phenotype
+### MGI
+
+##### Target-Disease Association
+### DisGeNET
+### Open Targets
+
+
+
 exprData <- read.table('data/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct', header = T, stringsAsFactors = F, 
                        sep = '\t', comment.char = '#', skip = 2)
 head(exprData)
