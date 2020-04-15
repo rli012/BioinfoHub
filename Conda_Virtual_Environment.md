@@ -1,5 +1,5 @@
 
-### Server Environment
+### HPCC Environment
 module unload miniconda2
 module load miniconda3
 module unload python2
