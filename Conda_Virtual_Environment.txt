@@ -25,7 +25,7 @@ envs_dirs:
 auto_activate_base: false
 
 
-### Creat Conda Environment
+### Create Conda Environment
 conda info
 conda create -n envconda python=3.6.7
 
