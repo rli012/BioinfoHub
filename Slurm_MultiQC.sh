@@ -5,6 +5,11 @@
 #SBATCH --time=10:00:00
 #SBATCH --output=MultiQC.stdout
 #SBATCH -p batch
+#SBATCH -chdir ./
+
+
+module unload python2
+module load python/3.6.0
 
 source /rhome/rli012/bigdata/G/env/bin/activate
 export PYTHONPATH=/rhome/rli012/bigdata/G/env/lib/python2.7/site-packages
