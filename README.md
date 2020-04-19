@@ -104,9 +104,10 @@ Open Targets is an innovative, large-scale, multi-year, public-private partnersh
 
 ## [DisGeNET - a database of gene-disease associations](https://www.disgenet.org/search)
 
-
-## [GWAScatlog]
-## [PhenoScanner]
+## [GWAS catalog](https://www.ebi.ac.uk/gwas/)
+## [GWAS Central](https://www.gwascentral.org/)
+## [PhenoScanner](http://www.phenoscanner.medschl.cam.ac.uk/)
+## [GWASdb2](http://jjwanglab.org/gwasdb)
 
 ## [PreMedKB](http://www.fudan-pgx.org/premedkb/index.html#/home)
 ## [OncoKB](https://oncokb.org/)
