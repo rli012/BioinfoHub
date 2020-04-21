@@ -1,3 +1,7 @@
+git clone https://github.com/rli012/BioinfoHub.git
+
+git pull
+
 git add file
 git commit -m 'message'
 git push origin master
