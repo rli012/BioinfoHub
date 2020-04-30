@@ -364,3 +364,39 @@ ht <- Heatmap(as.matrix(dataForHeatmap),
 
 draw(ht,annotation_legend_side = "right",row_dend_side = "left", heatmap_legend_side = "right")
 
+
+                      
+                       
+####
+                       
+ggplot(data=dataForBoxPlot, aes(x=group, y=expr)) +
+  geom_boxplot(aes(fill=NULL),
+               outlier.shape = NA, outlier.size = NA,#outlier.colour = 'black',
+               outlier.fill = NA) +
+  #geom_boxplot(aes(color=group, fill=group),
+  #             outlier.shape = 21, outlier.size = 1,#outlier.colour = 'black',
+  #             outlier.fill = NA, alpha=1, width=0.5) +
+  #stat_summary(geom = "crossbar", width=0.45, fatten=0, color="white", position=p,
+  #             fun.data = function(x){ return(c(y=median(x), ymin=median(x), ymax=median(x))) }) +
+  #ylim(-0.5,0.5)+
+  facet_wrap(~signature, nrow=1) +
+  geom_jitter(aes(color=group), size=2, width=0.05) +
+  scale_color_manual(values = c(google.blue, google.red, google.green)) +
+  labs(x='', y=expression('Fibroid Signature Score')) +
+  #geom_segment(data=df,aes(x = x1, y = y1, xend = x2, yend = y2)) +
+  #geom_text(data =anno, aes(x, y, label=label, group=NULL),
+  #          size=4) +
+  geom_signif(annotations = my_annotations, # optional
+              comparisons = my_comparisons,
+              step_increase = 0.1,
+              vjust=.2,
+              colour='gray20',
+              tip_length=0.015) + # 0
+  theme_bw()+
+  theme(legend.position = 'none', legend.title = element_blank())+
+  theme(axis.text = element_text(size=12,color='black'),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.title = element_text(size=16),
+        strip.text = element_text(size=14, face='bold')) +
+  theme(panel.border = element_rect(color='grey60')) +
+  theme(plot.margin =  margin(t = 0.25, r = 0.25, b = 0.25, l = 0.25, unit = "cm"))
