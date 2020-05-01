@@ -1,3 +1,9 @@
+
+google.red <- '#EA4335'
+google.yellow <- '#FBBC05'
+google.green <- '#34A853'
+google.blue <- '#4285F4'
+
 ### Diagnal, abline
 ggplot(data=dataForScatterPlot, aes(x=, y)) +
   geom_point(size=2, color='darkred') +
