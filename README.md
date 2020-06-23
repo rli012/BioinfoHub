@@ -85,6 +85,8 @@ Novel curated dataset comprising nearly all human public, primary bulk samples i
 
 Thanks to technological advances in genomics, transcriptomics, proteomics, metabolomics, and related fields, projects that generate a large number of measurements of the properties of cells, tissues, model organisms, and patients are becoming commonplace in biomedical research. In addition, curation projects are making great progress mining biomedical literature to extract and aggregate decades worth of research findings into online databases. Such projects are generating a wealth of information that potentially can guide research toward novel biomedical discoveries and advances in healthcare. To facilitate access to and learning from biomedical Big Data, we created the Harmonizome: a collection of information about genes and proteins from 114 datasets provided by 66 online resources.
 
+## [Omics DI](https://www.omicsdi.org/)
+
 ## [refine.bio](https://www.refine.bio/)
 
 Search the multi-organism collection of genome wide gene expression data obtained from publicly available sources like GEO, ArrayExpress, and SRA. The data has been processed uniformly and normalized using a set of standardized pipelines curated by the Childhood Cancer Data Lab (CCDL)
