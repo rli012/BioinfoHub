@@ -2,6 +2,7 @@
 * [Bioinformatics Training at HBC (Harvard Chan Bioinformatics Core)](https://wiki.harvard.edu/confluence/display/hbctraining/Bioinformatics+Training+at+HBC)
 * [R for Data Science (Garrett Grolemund and Hadley Wickham)](https://r4ds.had.co.nz/)  
 * [Illumina DRAGEN Bio-IT Platform](https://www.illumina.com/products/by-type/informatics-products/dragen-bio-it-platform.html)
+* [QIAGEN OmicSoft](https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/qiagen-omicsoft/)
 
 # Community
 
